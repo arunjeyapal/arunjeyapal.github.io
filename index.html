@@ -4,7 +4,7 @@
 <TITLE>Arun Jayapal</TITLE>
 </HEAD>
 <BODY BGCOLOR="FFFFFF">
-<CENTER><IMG SRC="images/Arun.jpg" ALIGN="Top"> </CENTER>
+<CENTER><IMG SRC="images/Arun.jpg" ALIGN="Top", WIDTH="100", HEIGHT="100"> </CENTER>
 <CENTER><H1>Arun Jayapal</H1></CENTER>
 <style>
 body {font-family: Arial;}
@@ -50,7 +50,7 @@ body {font-family: Arial;}
 <body>
 
 <div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'About me')" id="defaultOpen">About me</button>
+  <button class="tablinks" onclick="openCity(event, 'About me')" id="defaultOpen">About</button>
   <button class="tablinks" onclick="openCity(event, 'Publications')">Publications</button>
   <button class="tablinks" onclick="openCity(event, 'Resume')">Resume</button>
   <button class="tablinks" onclick="openCity(event, 'PhD Thesis')">PhD Thesis</button>
@@ -58,20 +58,67 @@ body {font-family: Arial;}
 </div>
 
 <div id="About me" class="tabcontent">
-  <H2>About me</H2> 
 	<p>
-		Arun is a spiritual research professional, however currently working in the IT industry. He has completed his PhD from the <a href="https://www.scss.tcd.ie">School of Computer science and Statistics</a>, <a href="https://www.tcd.ie">Trinity college Dublin</a>. He worked on his thesis titled <a href="docs/thesis.pdf">"Finding diachronic sense changes by unsupervised methods"</a> under the guidance of <a href="https://www.scss.tcd.ie/Martin.Emms/">Dr. Martin Emms</a> during Sep 2013 and Apr 2018.
+		Arun is a spiritual research professional, however currently working in the IT industry. He has completed PhD from the <a href="https://www.scss.tcd.ie">School of Computer science and Statistics</a>, <a href="https://www.tcd.ie">Trinity college Dublin</a>. He worked on his thesis titled <i>Finding diachronic sense changes by unsupervised methods</i> under the guidance of <a href="https://www.scss.tcd.ie/Martin.Emms/">Dr. Martin Emms</a> during <i>Sep 2013</i> and <i>Apr 2018</i>. For his complete list of publications, please look at his google scholar <a href="https://scholar.google.co.in/citations?user=YOHTxWcAAAAJ&hl=en">profile</a>. He has also been a reviewer for the CoLing and EACL conferences.
 	</p>
 
 	<p>
-		Towards the end of his PhD tenure, he came back to India and started working with a start-up <a href="https://www.sayint.ai">sayint</a> based out of Hyderabad. He works as computational linguist on conversational analytics. The recorded contact-center conversations are converted to text by an ASR system and text analytics is carried out on those conversational text. He handles the complete NLP stack carried out for text analytics. For his complete list of publications, please look at his google scholar <a href="https://scholar.google.co.in/citations?user=YOHTxWcAAAAJ&hl=en">profile</a>
+		Towards the end of his PhD tenure, he came back to India and started working with a start-up <a href="https://www.sayint.ai">sayint</a> based out of Hyderabad. He works as computational linguist on conversational analytics. The recorded contact-center conversations are converted to text by an ASR system and text analytics is carried out on those conversational text. He handles the complete NLP stack carried out for text analytics. Before his PhD, he worked earlier for Ditech networks -- now part of Nuance communications, on voice messaging platform. His role during that term was to de-normalize the ASR outcomes and convert them into human-readable form before delivering the text messages (converted from voice messages using ASR) to the users. Prior this he did his masters from the <a href="https://www.shef.ac.uk">University of Sheffield, UK</a> where he did his masters in speech and language processing, thesis titled <i>Entity Identification & Co-reference Resolution</i> guided by <a href="Entity Identification & Co-reference Resolution">Dr. Rob Gaizauskas</a>.
+	</p>
+
+	<p>
+		Off late I have not been very actively pushing my codebases to the github due to privacy reasons. However please do follow up on <A href="https://github.com/arunjeyapal">https://github.com/arunjeyapal</A> to not miss any updates here.
 	</p>
 
 </div>
 
 <div id="Publications" class="tabcontent">
-  <h3>Publications</h3>
-  <p>List to be updated</p>
+  <UL>
+	<LI><A
+	  HREF="Papers/PP6.pdf">Dynamic Generative model for Diachronic Sense Emergence Detection</A> <b>Proceedings of COLING 2016</b> by <i>Martin Emms, Arun Jayapal</i> held at Osaka, Japan in Dec. 2016 - A Gibbs sampling algorithm is developed for a diachronic model to estimate the parameters from raw time-stamped n-gram data with no sense annotation. We are able to demonstrate the inference of parameters which plausibly reflect the objective dynamics of sense use frequencies, in particular the emergence of a new sense.
+	</LI>
+	<br>
+
+	<LI><A
+	  HREF="Papers/PP7.pdf">An unsupervised EM method to infer time variation in sense probabilities</A> <b>Proceedings of ICON 2015: 12th International Conference on Natural Language Processing</b> by <i>Martin Emms, Arun Jayapal</i> held at Trivandrum, India in Dec. 2015 - We developed an EM algorithm to estimate the parameters from raw time-stamped n-gram data with no sense annotation. We are able to demonstrate the inference of parameters which plausibly reflect the objective dynamics of sense use frequencies, in particular the emergence of a new sense.
+	</LI>
+	<br>
+
+	<LI><A
+	  HREF="Papers/PP2.pdf">Author Verification: Basic Stacked Generalization Applied To Predictions from a Set of Heterogeneous Learners</A> by <i>Erwan Moreau, Arun Jayapal, Gerard Lynch, Carl Vogel</i>; <b>PAN proceedings on Author verification, CLEF 2015</b> in Nov 2015 -  Provides our system description for the author verification conducted by CLEF workshop.
+	</LI>
+	<br> 
+
+	<LI><A
+	  HREF="Papers/PP5.pdf">Detecting change and emergence for multiword expressions</A> by <i>Martin Emms, Arun Jayapal</i>; <b>Proceedings of the 10th Workshop on Multiword Expressions (MWE 2014)</b> held with <b>EACL 2014</b> at Gotenburg, Sweden in Apr. 2014 -  concerns unsupervised means to detect an emerging new 'MWE' usage of a given n-gram, such as the usage of <EM>smashed it</EM> to mean doing something excellently.
+	</LI>
+	<br> 
+
+	<LI><A
+	  HREF="Papers/PP8.pdf">TCDSCSS: Dimensionality Reduction to Evaluate Texts of Varying Lengths-an IR Approach</A> by <i>Arun Jayapal, Martin Emms, John D. Kelleher</i>; <b>Proceedings of the 8th International Workshop on Semantic Evaluation (SemEval 2014), COLING</b> held at Dublin, Ireland in Aug. 2014 - provides system description of the cross-level semantic similarity task for the SEMEVAL-2014 workshop, which uses dimensionality reduction technique.
+	</LI>
+	<br> 
+
+	<LI><A
+	  HREF="Papers/PP3.pdf">Author Verification: Exploring a Large set of Parameters using a Genetic Algorithm</A> by <i>Erwan Moreau, Arun Jayapal, Carl Vogel</i>; <b>PAN proceedings on Author verification, CLEF 2015</b> in Sep. 2015 - concerns system description of Author verification task conducted by PAN for CLEF.
+	</LI>
+	<br> 
+
+	<LI><A
+	  HREF="Papers/PP3.pdf">Vector space model and Overlap metric for Author Identification</A> by <i>Arun Jayapal, Binayak Goswami</i>; <b>PAN proceedings on Author verification, CLEF 2013</b> in Sep. 2013 - concerns system description of Author verification task conducted by PAN for CLEF. The system was developed using the very simple vector space model and worked reasonably well.
+	</LI>
+	<br> 
+
+	<LI><A
+	  HREF="Papers/PP9.pdf">Similarity Overlap Metric and Greedy String Tiling for Plagiarism Detection</A> by <i>Arun Jayapal</i>; <b>PAN proceedings on Plagiarism detection, CLEF 2012</b> in Sep. 2012 - concerns system description of Plagiarism detection task conducted by PAN for CLEF. The system was judged first in the document retrieval task (one of two tasks involved in Plagiarism detection system).
+	</LI>
+	<br> 
+
+	<LI><A
+	  HREF="Papers/PP1.pdf">USFD at KBP 2011: Entity linking, slot filling and temporal bounding</A> by <i>Amev Burman, Arun Jayapal, Sathish Kannan, Madhu Kavilikatta, Ayman Alhelbawy, Leon Derczynski, Robert Gaizauskas</i>; <b>KBP 2011 proceedings on Knowledge base Population for Text Analysis Conference</b> in Jan. 2011 - concerns system description for the Question answering task and this was part of my Master's dissertation. My role was to come up the Named entitity recognition (NER) model and co-reference resolution model. For NER, I used stanford CRF classifier and for co-reference resolution, I had come-up with a rule-based classifier.
+	</LI>
+	<br> 
+  </UL>
 </div>
 
 <div id="Resume" class="tabcontent">
@@ -106,7 +153,7 @@ function openCity(evt, cityName) {
     tablinks[i].className = tablinks[i].className.replace(" active", "");
   }
   document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " active";
+  evt.currentTarget.className += "active";
 }
 
 document.getElementById("defaultOpen").click();
