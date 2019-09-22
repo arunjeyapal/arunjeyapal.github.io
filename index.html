@@ -6,34 +6,118 @@
 <BODY BGCOLOR="FFFFFF">
 <CENTER><IMG SRC="images/Arun.jpg" ALIGN="Top"> </CENTER>
 <CENTER><H1>Arun Jayapal</H1></CENTER>
-<HR>
-<H2>About me</H2> 
-<p>
-	Arun is a spiritual research professional, however currently working in the IT industry. He has completed his PhD from the <a href="https://www.scss.tcd.ie">School of Computer science and Statistics</a>, <a href="https://www.tcd.ie">Trinity college Dublin</a>. He worked on his thesis titled <a href="docs/thesis.pdf">"Finding diachronic sense changes by unsupervised methods"</a> under the guidance of <a href="https://www.scss.tcd.ie/Martin.Emms/">Dr. Martin Emms</a> during Sep 2013 and Apr 2018.
-</p>
+<style>
+body {font-family: Arial;}
 
-<p>
-	Towards the end of his PhD tenure, he came back to India and started working with a start-up <a href="https://www.sayint.ai">sayint</a> based out of Hyderabad. He works as computational linguist on conversational analytics. The recorded contact-center conversations are converted to text by an ASR system and text analytics is carried out on those conversational text. He handles the complete NLP stack carried out for text analytics. For his complete list of publications, please look at his google scholar <a href="https://scholar.google.co.in/citations?user=YOHTxWcAAAAJ&hl=en">profile</a>
-</p>
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+</style>
+</head>
+<body>
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'About me')" id="defaultOpen">About me</button>
+  <button class="tablinks" onclick="openCity(event, 'Publications')">Publications</button>
+  <button class="tablinks" onclick="openCity(event, 'Resume')">Resume</button>
+  <button class="tablinks" onclick="openCity(event, 'PhD Thesis')">PhD Thesis</button>
+  <button class="tablinks" onclick="openCity(event, 'Contact')">Contact</button>
+</div>
+
+<div id="About me" class="tabcontent">
+  <H2>About me</H2> 
+	<p>
+		Arun is a spiritual research professional, however currently working in the IT industry. He has completed his PhD from the <a href="https://www.scss.tcd.ie">School of Computer science and Statistics</a>, <a href="https://www.tcd.ie">Trinity college Dublin</a>. He worked on his thesis titled <a href="docs/thesis.pdf">"Finding diachronic sense changes by unsupervised methods"</a> under the guidance of <a href="https://www.scss.tcd.ie/Martin.Emms/">Dr. Martin Emms</a> during Sep 2013 and Apr 2018.
+	</p>
+
+	<p>
+		Towards the end of his PhD tenure, he came back to India and started working with a start-up <a href="https://www.sayint.ai">sayint</a> based out of Hyderabad. He works as computational linguist on conversational analytics. The recorded contact-center conversations are converted to text by an ASR system and text analytics is carried out on those conversational text. He handles the complete NLP stack carried out for text analytics. For his complete list of publications, please look at his google scholar <a href="https://scholar.google.co.in/citations?user=YOHTxWcAAAAJ&hl=en">profile</a>
+	</p>
+
+</div>
+
+<div id="Publications" class="tabcontent">
+  <h3>Publications</h3>
+  <p>List to be updated</p>
+</div>
+
+<div id="Resume" class="tabcontent">
+  <object data="docs/resume_cv.pdf" type="application/pdf" width="100%" height="100%">
+  	<p>My Latest CV<a href="docs/resume_cv.pdf">to the PDF!</a></p>
+  </object>
+</div>
+
+<div id="PhD Thesis" class="tabcontent">
+  <object data="docs/thesis.pdf" type="application/pdf" width="100%" height="100%">
+  <p>PhD Thesis<a href="docs/thesis.pdf">to the PDF!</a></p>
+	</object>
+</div>
+
+<div id="Contact" class="tabcontent">
+	Please contact for project consultations, research and teaching opportunities
+	<br><br>
+	Phone: <a href="tel:+91-984-230-9803">+91-984-230-9803</a>
+	<br>
+	email: <a href="mailto:jayapala@tcd.ie">jayapala@tcd.ie</a>
+</div>
+
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+document.getElementById("defaultOpen").click();
+</script>
+
+<!-- <HR>
 <a href="docs/resume_cv.pdf">My latest CV</a>
 <BR>
 <a href="docs/thesis.pdf">PhD thesis</a>
 <BR>
-<a href="docs/viva-slides.pdf">Thesis presentation</a>
-<HR>
-<H2>Contact</H2> 
-Please contact for project consultations, research and teaching opportunities
-<br><br>
-Phone: <a href="tel:+91-984-230-9803">+91-984-230-9803</a>
-<br>
-email: <a href="mailto:jayapala@tcd.ie">jayapala@tcd.ie</a>
-<HR>
-<!-- <H2>This is a Medium Header</H2>
-Send me mail at <a href="mailto:support@yourcompany.com">
-support@yourcompany.com</a>.
-<P> This is a new paragraph!
-<P> <B>This is a new paragraph!</B>
-<BR> <B><I>This is a new sentence without a paragraph break, in bold italics.</I></B>
-<HR> -->
+<a href="docs/viva-slides.pdf">Thesis presentation</a> -->
+
 </BODY>
 </HTML>
