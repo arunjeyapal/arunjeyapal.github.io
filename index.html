@@ -72,6 +72,48 @@
 			margin-left: 200px;
 			margin-right: 200px;
 		}
+
+		form {
+			max-width: 400px;
+			margin: 0 auto;
+		}
+
+		.form-group {
+			margin-bottom: 20px;
+		}
+
+		label {
+			display: block;
+			margin-bottom: 5px;
+		}
+
+		input[type="text"],
+		input[type="email"],
+		textarea {
+			width: 100%;
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			box-sizing: border-box;
+		}
+
+		textarea {
+			height: 150px;
+		}
+
+		input[type="submit"] {
+			background-color: #4CAF50;
+			color: white;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			font-size: 16px;
+		}
+
+		input[type="submit"]:hover {
+			background-color: #45a049;
+		}
 	</style>
 </head>
 
@@ -124,31 +166,39 @@
 	</div>
 
 	<div id="Services" class="tabcontent">
-		<p><b>🔹 Sentiment Analysis:</b> Analyze text data to determine the sentiment expressed (positive, negative, or neutral)
+		<p><b>🔹 Sentiment Analysis:</b> Analyze text data to determine the sentiment expressed (positive, negative, or
+			neutral)
 			towards a particular topic, product, or brand.</p>
 
-		<p><b>🔹 Text Classification:</b> Classify text documents into predefined categories or topics, such as spam detection,
+		<p><b>🔹 Text Classification:</b> Classify text documents into predefined categories or topics, such as spam
+			detection,
 			news categorization, or customer support ticket routing.</p>
 
-		<p><b>🔹 Named Entity Recognition (NER):</b> To identify and classify entities mentioned in text, such as people,
+		<p><b>🔹 Named Entity Recognition (NER):</b> To identify and classify entities mentioned in text, such as
+			people,
 			organizations, locations, dates, and other relevant entities.</p>
 
-		<p><b>🔹 Text Summarization:</b> To automatically summarize large volumes of text, extracting key information and
+		<p><b>🔹 Text Summarization:</b> To automatically summarize large volumes of text, extracting key information
+			and
 			reducing
 			content while retaining its essence.</p>
 
-		<p><b>🔹 Language Translation:</b> Provide services for machine translation, converting text from one language to
+		<p><b>🔹 Language Translation:</b> Provide services for machine translation, converting text from one language
+			to
 			another
 			using NLP techniques and language models.</p>
 
-		<p><b>🔹 Topic Modeling:</b> To extract underlying topics or themes from a collection of documents, enabling insights
+		<p><b>🔹 Topic Modeling:</b> To extract underlying topics or themes from a collection of documents, enabling
+			insights
 			into
 			the main subjects discussed.</p>
 
-		<p><b>🔹 Text Generation:</b> Create models capable of generating human-like text based on a given prompt or context,
+		<p><b>🔹 Text Generation:</b> Create models capable of generating human-like text based on a given prompt or
+			context,
 			useful for content generation, story writing, or dialogue creation.</p>
 
-		<p><b>🔹 Keyword Extraction:</b> Develop systems to automatically extract relevant keywords or phrases from text, aiding
+		<p><b>🔹 Keyword Extraction:</b> Develop systems to automatically extract relevant keywords or phrases from
+			text, aiding
 			in
 			content analysis, search engine optimization (SEO), and information retrieval.</p>
 
@@ -156,17 +206,21 @@
 			insights,
 			such as sentiment trends, topic trends, or user behavior analysis.</p>
 
-		<p><b>🔹 Document Similarity Analysis:</b> To measure the similarity between text documents, enabling applications like
+		<p><b>🔹 Document Similarity Analysis:</b> To measure the similarity between text documents, enabling
+			applications like
 			plagiarism detection, document clustering, and recommendation systems.</p>
 
-		<p><b>🔹 Text Annotation and Labeling:</b> Provide annotation and labeling services for training datasets used in
+		<p><b>🔹 Text Annotation and Labeling:</b> Provide annotation and labeling services for training datasets used
+			in
 			supervised learning tasks, such as sentiment analysis, text classification, and named entity recognition.
 		</p>
 
-		<p><b>🔹 Custom NLP Solutions:</b> Offer bespoke NLP solutions tailored to specific business needs or industries,
+		<p><b>🔹 Custom NLP Solutions:</b> Offer bespoke NLP solutions tailored to specific business needs or
+			industries,
 			leveraging your expertise in natural language understanding and processing.</p>
 
-		<p><b>🔹 NLP Research and Development:</b> Engage in research and development activities to advance the field of NLP,
+		<p><b>🔹 NLP Research and Development:</b> Engage in research and development activities to advance the field of
+			NLP,
 			exploring new algorithms, techniques, and applications to push the boundaries of natural language
 			understanding
 			and processing.</p>
@@ -194,8 +248,9 @@
 		</ul>
 
 		<p>🔎 Are you searching for a seasoned Machine Learning / AI specialist capable of delivering tangible business
-		outcomes? Look no further. I am dedicated to taking full ownership of projects, allowing you to focus on your
-		core business while I lead the success of your AI initiatives.</p>
+			outcomes? Look no further. I am dedicated to taking full ownership of projects, allowing you to focus on
+			your
+			core business while I lead the success of your AI initiatives.</p>
 
 	</div>
 
@@ -300,11 +355,81 @@
 
 
 	<div id="Contact" class="tabcontent">
-		Please contact for project consultations, research and teaching opportunities
+		<!-- Please contact for project consultations, research and teaching opportunities
 		<br><br>
 		Phone: <a href="tel:+91-984-230-9803">+91-984-230-9803</a>
 		<br>
-		email: <a href="mailto:jayapala@tcd.ie">jayapala@tcd.ie</a>
+		email: <a href="mailto:jayapala@tcd.ie">jayapala@tcd.ie</a> -->
+
+		<form id="contactForm" action="https://api.web3forms.com/submit" method="post">
+			<input type="hidden" name="access_key" value="0cfb103f-3b58-4bc3-8f5c-df6b65ea286e">
+			<div class="form-group">
+				<label for="name">Name:</label>
+				<input type="text" id="name" name="name" required>
+			</div>
+			<div class="form-group">
+				<label for="email">Email:</label>
+				<input type="email" id="email" name="email" required>
+			</div>
+			<div class="form-group">
+				<label for="message">Message:</label>
+				<textarea id="message" name="message" required></textarea>
+			</div>
+			<input type="submit" value="Submit">
+			<div id="result"></div>
+		</form>
+
+		<!-- <script>
+			document.getElementById('contactForm').addEventListener('submit', function(event) {
+				// Prevent the default form submission
+				// event.preventDefault();
+	
+				// Display a pop-up message
+				alert('Form submitted successfully!');
+			});
+		</script> -->
+		<script src="https://web3forms.com/client/script.js" async defer></script>
+
+		<script>
+			const form = document.getElementById('contactForm');
+			const result = document.getElementById('result');
+
+			form.addEventListener('submit', function (e) {
+				e.preventDefault();
+				const formData = new FormData(form);
+				const object = Object.fromEntries(formData);
+				const json = JSON.stringify(object);
+				result.innerHTML = "Please wait..."
+
+				fetch('https://api.web3forms.com/submit', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+						'Accept': 'application/json'
+					},
+					body: json
+				})
+					.then(async (response) => {
+						let json = await response.json();
+						if (response.status == 200) {
+							result.innerHTML = "Form submitted successfully";
+						} else {
+							console.log(response);
+							result.innerHTML = json.message;
+						}
+					})
+					.catch(error => {
+						console.log(error);
+						result.innerHTML = "Something went wrong!";
+					})
+					.then(function () {
+						form.reset();
+						setTimeout(() => {
+							result.style.display = "none";
+						}, 3000);
+					});
+			});
+		</script>
 	</div>
 
 	<script>
@@ -324,14 +449,6 @@
 
 		document.getElementById("defaultOpen").click();
 	</script>
-
-	<!-- <HR>
-<a href="docs/resume_cv.pdf">My latest CV</a>
-<BR>
-<a href="docs/thesis.pdf">PhD thesis</a>
-<BR>
-<a href="docs/viva-slides.pdf">Thesis presentation</a> -->
-
 </BODY>
 
 </HTML>
