@@ -73,6 +73,15 @@
 			margin-right: 200px;
 		}
 
+		.tabcontent2 {
+			display: none;
+			padding: 6px 12px;
+			border: 0px solid #ccc;
+			border-top: none;
+			margin-left: 0px;
+			margin-right: 0px;
+		}
+
 		form {
 			max-width: 400px;
 			margin: 0 auto;
@@ -91,15 +100,16 @@
 		input[type="email"],
 		textarea {
 			width: 100%;
+			height: 150px;
 			padding: 10px;
 			border: 1px solid #ccc;
 			border-radius: 4px;
 			box-sizing: border-box;
 		}
 
-		textarea {
+		/* textarea {
 			height: 150px;
-		}
+		} */
 
 		input[type="submit"] {
 			background-color: #4CAF50;
@@ -113,6 +123,59 @@
 
 		input[type="submit"]:hover {
 			background-color: #45a049;
+		}
+
+		.tabcontent {
+			display: none;
+			padding: 20px;
+			border: 1px solid #ccc;
+			border-top: none;
+		}
+
+		/* Style the vertical tabs container */
+		.vertical-tabs-container {
+			display: flex;
+		}
+
+		/* Style the vertical tabs */
+		.vertical-tabs {
+			display: flex;
+			flex-direction: column;
+			width: 150px;
+			/* Adjust as needed */
+		}
+
+		.vertical-tabs button {
+			background-color: #f2f2f2;
+			color: #444;
+			padding: 10px 20px;
+			width: 100%;
+			text-align: left;
+			border: none;
+			border-bottom: 1px solid #ccc;
+			cursor: pointer;
+			transition: background-color 0.3s;
+		}
+
+		.vertical-tabs button:hover {
+			background-color: #ddd;
+		}
+
+		.vertical-tabs button.active {
+			background-color: #ccc;
+			/* background-color: #ddd; */
+		}
+
+		/* Style the tab content container */
+		.tabcontent-container {
+			flex: 1;
+		}
+
+		img {
+			border-radius: 16px; /* Rounded borders */
+			width: 48px; /* Adjust the width as needed */
+			height: 48px; /* Adjust the height as needed */
+			margin-left: 5px; /* Add some space between the text and the image */
 		}
 	</style>
 </head>
@@ -166,7 +229,796 @@
 	</div>
 
 	<div id="Services" class="tabcontent">
-		<p><b>🔹 Sentiment Analysis:</b> Analyze text data to determine the sentiment expressed (positive, negative, or
+
+		<div class="vertical-tabs-container">
+
+			<div class="vertical-tabs">
+				<button class="tablink2" onclick="openTab(event, 'Tab1')" id="defaultOpen">Find sentiments</button>
+				<button class="tablink2" onclick="openTab(event, 'Tab2')">Classify text</button>
+				<button class="tablink2" onclick="openTab(event, 'Tab3')">Identify entities</button>
+				<button class="tablink2" onclick="openTab(event, 'Tab4')">Summarization</button>
+				<button class="tablink2" onclick="openTab(event, 'Tab5')">Translation</button>
+				<button class="tablink2" onclick="openTab(event, 'Tab6')">Topic Modeling</button>
+				<button class="tablink2" onclick="openTab(event, 'Tab7')">Generate text</button>
+				<button class="tablink2" onclick="openTab(event, 'Tab8')">Extract keywords</button>
+				<button class="tablink2" onclick="openTab(event, 'Tab9')">Text mining</button>
+				<button class="tablink2" onclick="openTab(event, 'Tab10')">Similarity analysis</button>
+				<button class="tablink2" onclick="openTab(event, 'Tab11')">Custom solutioning</button>
+				<button class="tablink2" onclick="openTab(event, 'Tab12')">Text annotation</button>
+				<button class="tablink2" onclick="openTab(event, 'Tab13')">R & D</button>
+			</div>
+
+			<div class="tabcontent-container">
+				<div id="Tab1" class="tabcontent2" style="display:block;">
+
+					<h1>Welcome to Our Sentiment Analysis Service</h1>
+
+					<p>We understand the importance of understanding the sentiments expressed by your audience. Whether
+						it's feedback on your products, opinions about your brand, or reactions to your latest marketing
+						campaign, knowing how people feel can make all the difference in shaping your strategy.</p>
+
+					<h2>What is Sentiment Analysis?</h2>
+
+					<p>Sentiment analysis, also known as opinion mining, is the prstyle="display:block;"ocess of
+						determining the emotional tone behind a piece of text. Our sentiment analysis service uses
+						advanced natural language processing (NLP) techniques to analyze text and classify it as
+						positive, negative, or neutral.</p>
+
+					<h2>How Our Service Works</h2>
+
+					<p>Using our intuitive interface, simply input the text you want to analyze, whether it's customer
+						reviews, social media posts, or any other form of textual data. Our powerful algorithms then go
+						to work, examining each word and phrase to discern its sentiment. Within moments, you'll receive
+						a comprehensive report detailing the overall sentiment, as well as specific insights into the
+						emotions expressed.</p>
+
+					<h2>Key Features</h2>
+
+					<ul>
+						<li><strong>Real-time Analysis:</strong> Get instant insights into the sentiment of your
+							audience, allowing you to respond quickly to emerging trends or issues.</li>
+						<li><strong>Accuracy:</strong> Our state-of-the-art algorithms ensure precise sentiment
+							analysis, even in complex or ambiguous texts.</li>
+						<li><strong>Customization:</strong> Tailor the analysis to your specific needs, whether you're
+							focusing on social media sentiment, product reviews, or any other type of text.</li>
+						<li><strong>Scalability:</strong> From small businesses to large enterprises, our service scales
+							to meet the needs of organizations of all sizes.</li>
+					</ul>
+
+					<h2>Why Choose Us?</h2>
+
+					<ul>
+						<li><strong>Expertise:</strong> With years of experience in NLP and machine learning, our team
+							of experts is dedicated to delivering the most accurate and reliable sentiment analysis
+							results.</li>
+						<li><strong>Security:</strong> We take data security seriously, employing the latest encryption
+							and privacy measures to safeguard your sensitive information.</li>
+						<li><strong>Ease of Use:</strong> Our user-friendly interface makes it easy for anyone to access
+							powerful sentiment analysis tools, without the need for specialized training.</li>
+					</ul>
+
+					<h2>Get Started Today</h2>
+
+					<p>Don't let valuable insights slip through the cracks. Sign up for our sentiment analysis service
+						today and gain a deeper understanding of how your audience truly feels. Join the ranks of
+						businesses worldwide who trust us for cutting-edge sentiment analysis solutions.</p>
+
+				</div>
+
+				<div id="Tab2" class="tabcontent2">
+					<h1>Welcome to Our Text Classification Service</h1>
+
+					<p>We understand the importance of organizing and categorizing textual data for various purposes.
+						Whether it's classifying support tickets, filtering emails, or organizing research documents,
+						our text classification service empowers you to make sense of your data quickly and efficiently.
+					</p>
+
+					<h2>What is Text Classification?</h2>
+
+					<p>Text classification, also known as text categorization, is the process of assigning predefined
+						categories or labels to textual data based on its content. Our text classification service
+						leverages advanced machine learning algorithms to automatically analyze and categorize text,
+						allowing you to streamline workflows and extract valuable insights.</p>
+
+					<h2>How Our Service Works</h2>
+
+					<p>Using our intuitive interface, simply upload the text data you want to classify, whether it's
+						documents, emails, social media posts, or any other form of textual content. Our powerful
+						algorithms then analyze the text, extracting relevant features and assigning appropriate labels
+						or categories. You'll receive a comprehensive report outlining the classification results,
+						enabling you to organize and prioritize your data effectively.</p>
+
+					<h2>Key Features</h2>
+
+					<ul>
+						<li><strong>Automated Classification:</strong> Save time and resources by automating the process
+							of categorizing large volumes of text data.</li>
+						<li><strong>Customizable Labels:</strong> Tailor the classification labels to your specific
+							needs, ensuring that the categories align with your business requirements.</li>
+						<li><strong>Scalable Solution:</strong> Whether you're a small team or a large enterprise, our
+							service scales to handle datasets of any size, accommodating your growing needs.</li>
+						<li><strong>Integration:</strong> Seamlessly integrate our text classification service into your
+							existing workflows and systems for a seamless user experience.</li>
+					</ul>
+
+					<h2>Why Choose Us?</h2>
+
+					<ul>
+						<li><strong>Expertise:</strong> With years of experience in machine learning and natural
+							language processing, our team of experts is committed to delivering accurate and reliable
+							text classification results.</li>
+						<li><strong>Performance:</strong> Our advanced algorithms ensure high-performance
+							classification, even for complex and diverse datasets.</li>
+						<li><strong>Support:</strong> We provide ongoing support and assistance to help you maximize the
+							value of our text classification service, ensuring that you achieve your goals efficiently.
+						</li>
+					</ul>
+
+					<h2>Get Started Today</h2>
+
+					<p>Ready to streamline your data organization and classification processes? Sign up for our text
+						classification service today and unlock the full potential of your textual data. Join the ranks
+						of businesses worldwide who trust us for cutting-edge text classification solutions.</p>
+				</div>
+
+				<div id="Tab3" class="tabcontent2">
+					<h1>Welcome to Our Named Entity Recognition Service</h1>
+
+					<p>We recognize the importance of extracting meaningful information from text data. Our Named Entity
+						Recognition (NER) service is designed to identify and categorize named entities within textual
+						content, providing valuable insights for various applications.</p>
+
+					<h2>What is Named Entity Recognition?</h2>
+
+					<p>Named Entity Recognition (NER) is the process of identifying and classifying named entities in
+						text into predefined categories such as person names, organization names, locations, dates, and
+						more. Our NER service utilizes advanced machine learning algorithms to automatically detect and
+						categorize named entities, enabling you to extract structured information from unstructured
+						text.</p>
+
+					<h2>How Our Service Works</h2>
+
+					<p>Using our intuitive interface, simply input the text data you want to analyze, whether it's
+						articles, documents, social media posts, or any other form of textual content. Our powerful
+						algorithms then analyze the text, identifying named entities and classifying them into relevant
+						categories. You'll receive a comprehensive report detailing the identified entities and their
+						corresponding categories, allowing you to gain valuable insights from your text data.</p>
+
+					<h2>Key Features</h2>
+
+					<ul>
+						<li><strong>Entity Detection:</strong> Automatically identify named entities such as person
+							names, organization names, locations, dates, and more within your text data.</li>
+						<li><strong>Category Classification:</strong> Categorize identified entities into predefined
+							categories for structured analysis and information extraction.</li>
+						<li><strong>Multi-language Support:</strong> Our NER service supports multiple languages,
+							allowing you to analyze text data in different languages with ease.</li>
+						<li><strong>Customization:</strong> Tailor the NER model to your specific domain or industry for
+							more accurate entity recognition and classification.</li>
+					</ul>
+
+					<h2>Why Choose Us?</h2>
+
+					<ul>
+						<li><strong>Expertise:</strong> With expertise in natural language processing and machine
+							learning, our team of experts delivers accurate and reliable named entity recognition
+							results.</li>
+						<li><strong>Performance:</strong> Our advanced algorithms ensure high-performance entity
+							detection and classification, even for complex and diverse datasets.</li>
+						<li><strong>Scalability:</strong> Whether you're processing small documents or analyzing large
+							volumes of text data, our NER service scales to meet your needs.</li>
+					</ul>
+
+					<h2>Get Started Today</h2>
+
+					<p>Ready to unlock the insights hidden within your text data? Sign up for our Named Entity
+						Recognition service today and discover the power of structured information extraction. Join the
+						ranks of businesses worldwide who trust us for cutting-edge NER solutions.</p>
+				</div>
+
+				<div id="Tab4" class="tabcontent2">
+					<h1>Welcome to Our Text Summarization Service</h1>
+
+					<p>We understand the challenge of dealing with large volumes of textual information. Our Text
+						Summarization service is designed to condense lengthy text documents into concise summaries,
+						allowing you to quickly grasp the main points and key insights without having to read through
+						every detail.</p>
+
+					<h2>What is Text Summarization?</h2>
+
+					<p>Text Summarization is the process of distilling the most important information from a text
+						document while retaining its meaning and essence. Our Text Summarization service employs
+						advanced natural language processing (NLP) techniques to analyze text and generate succinct
+						summaries, enabling you to efficiently consume and utilize textual information.</p>
+
+					<h2>How Our Service Works</h2>
+
+					<p>Using our intuitive interface, simply upload the text document you want to summarize, whether
+						it's articles, reports, research papers, or any other form of textual content. Our powerful
+						algorithms then analyze the text, identifying key sentences and extracting essential
+						information. You'll receive a concise summary that captures the main points and key insights of
+						the original document, enabling you to save time and focus on what matters most.</p>
+
+					<h2>Key Features</h2>
+
+					<ul>
+						<li><strong>Automatic Summarization:</strong> Quickly generate summaries of lengthy text
+							documents without the need for manual extraction or editing.</li>
+						<li><strong>Customizable Length:</strong> Tailor the length of the summary to your preferences,
+							whether you need a brief overview or a more detailed summary.</li>
+						<li><strong>Multi-document Summarization:</strong> Summarize multiple documents at once to
+							identify common themes and trends across your textual data.</li>
+						<li><strong>Language Support:</strong> Our Text Summarization service supports multiple
+							languages, allowing you to summarize text documents in different languages with ease.</li>
+					</ul>
+
+					<h2>Why Choose Us?</h2>
+
+					<ul>
+						<li><strong>Accuracy:</strong> Our advanced algorithms ensure accurate and reliable text
+							summarization, capturing the essence of the original document while eliminating unnecessary
+							details.</li>
+						<li><strong>Efficiency:</strong> Save time and effort by quickly obtaining concise summaries of
+							lengthy text documents, enabling you to make informed decisions and take action more
+							efficiently.</li>
+						<li><strong>Scalability:</strong> Whether you're summarizing individual documents or analyzing
+							large volumes of textual data, our Text Summarization service scales to meet your needs.
+						</li>
+					</ul>
+
+					<h2>Get Started Today</h2>
+
+					<p>Ready to unlock the power of text summarization? Sign up for our Text Summarization service today
+						and streamline your information consumption and decision-making processes. Join the ranks of
+						businesses worldwide who trust <strong>[Your Company Name]</strong> for cutting-edge text
+						summarization solutions.</p>
+
+				</div>
+
+				<div id="Tab5" class="tabcontent2">
+					<h1>Welcome to Our Language Translation Service</h1>
+
+					<p>We understand the importance of breaking down language barriers to facilitate communication and
+						collaboration across borders. Our Language Translation service is designed to provide accurate
+						and reliable translation of text content between different languages, enabling you to reach a
+						global audience and expand your business opportunities.</p>
+
+					<h2>What is Language Translation?</h2>
+
+					<p>Language Translation is the process of converting text from one language into another while
+						preserving its meaning and context. Our Language Translation service leverages advanced machine
+						learning algorithms and linguistic techniques to ensure accurate and natural-sounding
+						translations, allowing you to convey your message effectively in any language.</p>
+
+					<h2>How Our Service Works</h2>
+
+					<p>Using our intuitive interface, simply input the text you want to translate and select the target
+						language you wish to translate it into. Our powerful algorithms then analyze the text,
+						understanding its meaning and structure, and generate a translated version in the desired
+						language. You'll receive a high-quality translation that retains the original intent and nuances
+						of the text, enabling you to communicate seamlessly across language barriers.</p>
+
+					<h2>Key Features</h2>
+
+					<ul>
+						<li><strong>Multi-language Support:</strong> Translate text content between a wide range of
+							languages, including popular languages such as English, Spanish, French, Chinese, and more.
+						</li>
+						<li><strong>Real-time Translation:</strong> Get instant translations of text content, allowing
+							you to communicate effectively with international partners, customers, and audiences in
+							real-time.</li>
+						<li><strong>Customization:</strong> Customize the translation settings to meet your specific
+							needs, whether you're translating business documents, marketing materials, or website
+							content.</li>
+						<li><strong>Quality Assurance:</strong> Our Language Translation service ensures high-quality
+							translations that accurately convey the meaning and tone of the original text, regardless of
+							language complexity.</li>
+					</ul>
+
+					<h2>Why Choose Us?</h2>
+
+					<ul>
+						<li><strong>Accuracy:</strong> Our advanced algorithms and language models deliver accurate and
+							reliable translations, ensuring clear communication across languages.</li>
+						<li><strong>Speed:</strong> With fast turnaround times, our Language Translation service enables
+							you to translate text content quickly and efficiently, without compromising on quality.</li>
+						<li><strong>Security:</strong> We prioritize data security and confidentiality, employing the
+							latest encryption and privacy measures to protect your sensitive information during the
+							translation process.</li>
+					</ul>
+
+					<h2>Get Started Today</h2>
+
+					<p>Ready to overcome language barriers and expand your global reach? Sign up for our Language
+						Translation service today and unlock the power of seamless communication across languages. Join
+						the ranks of businesses worldwide who trust us for cutting-edge language translation solutions.
+					</p>
+
+				</div>
+				<div id="Tab6" class="tabcontent2">
+					<h1>Welcome to Our Topic Modeling Service</h1>
+
+					<p>We recognize the importance of extracting meaningful insights from unstructured text data. Our
+						Topic Modeling service is designed to automatically identify and extract latent topics from
+						large collections of documents, enabling you to uncover hidden patterns, trends, and themes
+						within your textual data.</p>
+
+					<h2>What is Topic Modeling?</h2>
+
+					<p>Topic Modeling is a technique used to automatically discover the main themes or topics present in
+						a collection of documents. Our Topic Modeling service employs advanced machine learning
+						algorithms to analyze the textual content and identify clusters of words that frequently
+						co-occur, representing coherent topics or themes within the data.</p>
+
+					<h2>How Our Service Works</h2>
+
+					<p>Using our intuitive interface, simply upload the text documents you want to analyze, whether it's
+						articles, research papers, customer reviews, or any other form of textual content. Our powerful
+						algorithms then process the text data, identifying common patterns and relationships between
+						words to extract latent topics. You'll receive a comprehensive report outlining the identified
+						topics and their corresponding keywords, enabling you to gain valuable insights into the
+						underlying themes within your textual data.</p>
+
+					<h2>Key Features</h2>
+
+					<ul>
+						<li><strong>Automatic Topic Discovery:</strong> Automatically identify and extract latent topics
+							from large collections of text documents, without the need for manual analysis or labeling.
+						</li>
+						<li><strong>Topic Visualization:</strong> Visualize the identified topics using interactive
+							charts and graphs, allowing you to explore the relationships between topics and understand
+							their distribution within the data.</li>
+						<li><strong>Scalability:</strong> Our Topic Modeling service scales to handle datasets of any
+							size, from small document collections to large corpora, enabling you to analyze textual data
+							at scale.</li>
+						<li><strong>Customization:</strong> Customize the topic modeling parameters to meet your
+							specific requirements, including the number of topics to extract, the algorithm used, and
+							the preprocessing steps applied to the text data.</li>
+					</ul>
+
+					<h2>Why Choose Us?</h2>
+
+					<ul>
+						<li><strong>Expertise:</strong> With expertise in natural language processing and machine
+							learning, our team of experts delivers accurate and reliable topic modeling results, even
+							for complex and diverse datasets.</li>
+						<li><strong>Interpretability:</strong> Our Topic Modeling service provides interpretable
+							results, enabling you to understand and interpret the identified topics and their relevance
+							to your data.</li>
+						<li><strong>Support:</strong> We provide ongoing support and assistance to help you make the
+							most of our Topic Modeling service, ensuring that you can derive actionable insights from
+							your textual data.</li>
+					</ul>
+
+					<h2>Get Started Today</h2>
+
+					<p>Ready to uncover hidden insights within your textual data? Sign up for our Topic Modeling service
+						today and discover the power of automatic topic discovery and extraction. Join the ranks of
+						businesses worldwide who trust us for cutting-edge topic modeling solutions.</p>
+
+				</div>
+
+				<div id="Tab7" class="tabcontent2">
+
+					<h1>Welcome to Our Text Generation Service</h1>
+
+					<p>We understand the power of generating compelling and engaging textual content. Our Text
+						Generation service is designed to automatically generate natural-sounding text based on your
+						input, whether it's creating product descriptions, marketing copy, or creative writing.</p>
+
+					<h2>What is Text Generation?</h2>
+
+					<p>Text Generation is the process of automatically producing coherent and contextually relevant text
+						based on a given input or prompt. Our Text Generation service utilizes advanced natural language
+						processing (NLP) techniques, including deep learning models such as recurrent neural networks
+						(RNNs) and transformer architectures, to generate high-quality text that mimics human writing.
+					</p>
+
+					<h2>How Our Service Works</h2>
+
+					<p>Using our intuitive interface, simply input the starting text or prompt that you want to build
+						upon or expand. Our powerful algorithms then analyze the input and generate new text that
+						follows the same style, tone, and context. You'll receive the generated text, which can be
+						further refined or customized to suit your specific needs.</p>
+
+					<h2>Key Features</h2>
+
+					<ul>
+						<li><strong>Customizable Output:</strong> Generate text in various styles and formats, including
+							product descriptions, blog posts, social media content, and more.</li>
+						<li><strong>Quality Assurance:</strong> Our Text Generation service ensures that the generated
+							text is grammatically correct, coherent, and contextually relevant, maintaining a high
+							standard of quality.</li>
+						<li><strong>Language Support:</strong> Generate text in multiple languages, allowing you to
+							create content for global audiences and markets.</li>
+						<li><strong>Scalability:</strong> Our Text Generation service scales to handle a wide range of
+							input lengths and complexity levels, from short prompts to longer passages of text.</li>
+					</ul>
+
+					<h2>Why Choose Us?</h2>
+
+					<ul>
+						<li><strong>Expertise:</strong> With expertise in natural language processing and machine
+							learning, our team of experts delivers state-of-the-art text generation solutions that meet
+							the needs of businesses and creators alike.</li>
+						<li><strong>Flexibility:</strong> Our Text Generation service offers flexibility and
+							versatility, allowing you to generate text for a variety of purposes and applications, from
+							content creation to storytelling.</li>
+						<li><strong>Support:</strong> We provide ongoing support and assistance to help you make the
+							most of our Text Generation service, ensuring that you can generate compelling and engaging
+							text with ease.</li>
+					</ul>
+
+					<h2>Get Started Today</h2>
+
+					<p>Ready to elevate your content creation process with automated text generation? Sign up for our
+						Text Generation service today and unlock the power of AI-driven writing. Join the ranks of
+						businesses and creators worldwide who trust us for cutting-edge text generation solutions.</p>
+
+				</div>
+				<div id="Tab8" class="tabcontent2">
+					<h1>Welcome to Our Keyword Extraction Service</h1>
+
+					<p>We understand the importance of identifying key terms and phrases within textual content. Our
+						Keyword Extraction service is designed to automatically extract relevant keywords from
+						documents, enabling you to gain insights into the main topics and themes.</p>
+
+					<h2>What is Keyword Extraction?</h2>
+
+					<p>Keyword Extraction is the process of identifying and extracting important words or phrases from
+						text documents. Our Keyword Extraction service utilizes advanced natural language processing
+						(NLP) techniques to analyze the frequency and relevance of words within the document, providing
+						you with a list of key terms that capture the main concepts.</p>
+
+					<h2>How Our Service Works</h2>
+
+					<p>Using our intuitive interface, simply upload the text document you want to analyze. Our powerful
+						algorithms then analyze the document, identifying words and phrases that are most indicative of
+						its content. You'll receive a list of extracted keywords, ranked by their importance and
+						relevance, allowing you to understand the main topics and themes covered in the document.</p>
+
+					<h2>Key Features</h2>
+
+					<ul>
+						<li><strong>Automatic Keyword Extraction:</strong> Automatically identify and extract relevant
+							keywords from text documents, saving you time and effort.</li>
+						<li><strong>Customizable Settings:</strong> Customize the keyword extraction process to meet
+							your specific needs, including the number of keywords to extract and the criteria for
+							relevance.</li>
+						<li><strong>Keyword Visualization:</strong> Visualize the extracted keywords using interactive
+							charts and graphs, allowing you to explore the main topics and themes within the document.
+						</li>
+						<li><strong>Integration:</strong> Seamlessly integrate our Keyword Extraction service into your
+							existing workflows and systems for a streamlined analysis process.</li>
+					</ul>
+
+					<h2>Why Choose Us?</h2>
+
+					<ul>
+						<li><strong>Accuracy:</strong> Our advanced algorithms ensure accurate and reliable keyword
+							extraction, even for complex and diverse text documents.</li>
+						<li><strong>Efficiency:</strong> Save time and resources by automating the keyword extraction
+							process, allowing you to focus on extracting insights and making decisions based on the
+							results.</li>
+						<li><strong>Support:</strong> We provide ongoing support and assistance to help you make the
+							most of our Keyword Extraction service, ensuring that you can derive actionable insights
+							from your textual data.</li>
+					</ul>
+
+					<h2>Get Started Today</h2>
+
+					<p>Ready to unlock the insights hidden within your text documents? Sign up for our Keyword
+						Extraction service today and discover the power of automated keyword analysis. Join the ranks of
+						businesses worldwide who trust us for cutting-edge keyword extraction solutions.</p>
+
+				</div>
+
+				<div id="Tab9" class="tabcontent2">
+					<h1>Welcome to Our Text Mining and Analysis Service</h1>
+
+					<p>We specialize in extracting valuable insights from textual data through text mining and analysis.
+						Our Text Mining and Analysis service is designed to uncover patterns, trends, and relationships
+						within large collections of text documents, enabling you to make data-driven decisions and gain
+						a deeper understanding of your text data.</p>
+
+					<h2>What is Text Mining and Analysis?</h2>
+
+					<p>Text Mining, also known as text analytics, is the process of extracting useful information from
+						unstructured text data. Our Text Mining and Analysis service utilize advanced natural language
+						processing (NLP) techniques and machine learning algorithms to analyze textual content and
+						extract valuable insights, such as sentiment, topics, entities, and more.</p>
+
+					<h2>How Our Service Works</h2>
+
+					<p>Using our intuitive interface, simply upload the text documents you want to analyze. Our powerful
+						algorithms then process the text data, extracting key insights and patterns, such as sentiment
+						analysis, keyword extraction, named entity recognition, and topic modeling. You'll receive
+						comprehensive reports and visualizations that provide valuable insights into your text data,
+						enabling you to make informed decisions and take action based on the results.</p>
+
+					<h2>Key Features</h2>
+
+					<ul>
+						<li><strong>Multi-level Analysis:</strong> Perform in-depth analysis of textual data, including
+							sentiment analysis, keyword extraction, named entity recognition, topic modeling, and more.
+						</li>
+						<li><strong>Interactive Visualizations:</strong> Visualize the results of text mining and
+							analysis using interactive charts, graphs, and dashboards, allowing you to explore insights
+							and trends within your data.</li>
+						<li><strong>Scalability:</strong> Our Text Mining and Analysis service scales to handle large
+							volumes of text data, enabling you to analyze datasets of any size with ease.</li>
+						<li><strong>Customization:</strong> Customize the analysis parameters and settings to meet your
+							specific needs, ensuring that you extract the most relevant and actionable insights from
+							your text data.</li>
+					</ul>
+
+					<h2>Why Choose Us?</h2>
+
+					<ul>
+						<li><strong>Expertise:</strong> With expertise in natural language processing and machine
+							learning, our team of experts delivers accurate and reliable text mining and analysis
+							solutions that meet the needs of businesses and organizations across industries.</li>
+						<li><strong>Efficiency:</strong> Our advanced algorithms and scalable infrastructure enable fast
+							and efficient analysis of large volumes of text data, allowing you to derive insights and
+							make decisions in real-time.</li>
+						<li><strong>Support:</strong> We provide ongoing support and assistance to help you make the
+							most of our Text Mining and Analysis service, ensuring that you can derive actionable
+							insights and drive business value from your textual data.</li>
+					</ul>
+
+					<h2>Get Started Today</h2>
+
+					<p>Ready to unlock the insights hidden within your text data? Sign up for our Text Mining and
+						Analysis service today and discover the power of data-driven decision-making. Join the ranks of
+						businesses worldwide who trust us for cutting-edge text mining and analysis solutions.</p>
+				</div>
+
+				<div id="Tab10" class="tabcontent2">
+					<h1>Welcome to Our Document Similarity Analysis Service</h1>
+
+					<p>We understand the importance of comparing and analyzing text documents to identify similarities
+						and differences. Our Document Similarity Analysis service is designed to automatically compare
+						pairs of documents and quantify their similarity, enabling you to identify duplicate content,
+						detect plagiarism, and uncover related documents.</p>
+
+					<h2>What is Document Similarity Analysis?</h2>
+
+					<p>Document Similarity Analysis is the process of quantifying the degree of similarity between pairs
+						of text documents. Our Document Similarity Analysis service utilizes advanced natural language
+						processing (NLP) techniques and similarity measures to compare the content of documents,
+						providing a quantitative measure of their similarity or dissimilarity.</p>
+
+					<h2>How Our Service Works</h2>
+
+					<p>Using our intuitive interface, simply upload the pairs of documents you want to compare. Our
+						powerful algorithms then process the text data, analyzing the content of each document and
+						computing a similarity score between them. You'll receive a comprehensive report that highlights
+						the degree of similarity between each pair of documents, enabling you to identify duplicate
+						content, detect plagiarism, and uncover related documents.</p>
+
+					<h2>Key Features</h2>
+
+					<ul>
+						<li><strong>Automatic Comparison:</strong> Automatically compare pairs of text documents to
+							quantify their similarity, saving you time and effort.</li>
+						<li><strong>Scalable Solution:</strong> Our Document Similarity Analysis service scales to
+							handle large volumes of documents, enabling you to analyze datasets of any size with ease.
+						</li>
+						<li><strong>Customizable Thresholds:</strong> Customize the similarity thresholds and parameters
+							to meet your specific needs, ensuring that you accurately identify similar documents based
+							on your criteria.</li>
+						<li><strong>Integration:</strong> Seamlessly integrate our Document Similarity Analysis service
+							into your existing workflows and systems for a streamlined analysis process.</li>
+					</ul>
+
+					<h2>Why Choose Us?</h2>
+
+					<ul>
+						<li><strong>Accuracy:</strong> Our advanced algorithms and similarity measures ensure accurate
+							and reliable document similarity analysis, enabling you to confidently identify duplicate
+							content, detect plagiarism, and uncover related documents.</li>
+						<li><strong>Efficiency:</strong> Save time and resources by automating the document similarity
+							analysis process, allowing you to quickly identify similarities and make informed decisions
+							based on the results.</li>
+						<li><strong>Support:</strong> We provide ongoing support and assistance to help you make the
+							most of our Document Similarity Analysis service, ensuring that you can leverage the
+							insights gained to drive business value.</li>
+					</ul>
+
+					<h2>Get Started Today</h2>
+
+					<p>Ready to uncover similarities and relationships within your text documents? Sign up for our
+						Document Similarity Analysis service today and discover the power of automated document
+						comparison. Join the ranks of businesses worldwide who trust us for cutting-edge document
+						similarity analysis solutions.</p>
+				</div>
+
+				<div id="Tab11" class="tabcontent2">
+					<h1>Welcome to Our Custom NLP Solutions</h1>
+
+					<p>We specialize in developing custom natural language processing (NLP) solutions tailored to your
+						specific needs and requirements. Whether you're looking to analyze text data, extract insights,
+						or build intelligent applications, our team of experts can help you leverage the power of NLP to
+						achieve your goals.</p>
+
+					<h2>What are Custom NLP Solutions?</h2>
+
+					<p>Custom NLP Solutions are bespoke applications or services built to address unique challenges and
+						opportunities using natural language processing techniques. Our Custom NLP Solutions are
+						designed to meet your specific needs, whether you're looking to automate processes, extract
+						insights from textual data, or enhance the functionality of your applications with language
+						understanding capabilities.</p>
+
+					<h2>How Our Service Works</h2>
+
+					<p>Using our consultative approach, our team works closely with you to understand your requirements,
+						objectives, and constraints. We then design and develop custom NLP solutions tailored to your
+						needs, leveraging the latest advancements in NLP, machine learning, and artificial intelligence.
+						Throughout the development process, we provide regular updates and collaborate with you to
+						ensure that the solution meets your expectations and delivers tangible results.</p>
+
+					<h2>Key Features</h2>
+
+					<ul>
+						<li><strong>Customization:</strong> Develop custom NLP solutions tailored to your specific needs
+							and requirements, ensuring that the solution aligns with your business objectives and
+							delivers value.</li>
+						<li><strong>Expertise:</strong> Our team of NLP experts has extensive experience in developing
+							custom solutions for a wide range of industries and applications, ensuring that you receive
+							high-quality and reliable solutions.</li>
+						<li><strong>Scalability:</strong> Our custom NLP solutions are designed to scale with your
+							business, accommodating growing data volumes and evolving requirements without sacrificing
+							performance or reliability.</li>
+						<li><strong>Support:</strong> We provide ongoing support and maintenance for your custom NLP
+							solution, ensuring that it remains up-to-date, secure, and optimized for performance.</li>
+					</ul>
+
+					<h2>Why Choose Us?</h2>
+
+					<ul>
+						<li><strong>Expertise:</strong> With years of experience in natural language processing and
+							machine learning, our team of experts delivers custom NLP solutions that meet the needs of
+							businesses and organizations across industries.</li>
+						<li><strong>Collaboration:</strong> We work closely with you throughout the development process,
+							ensuring that the solution is aligned with your objectives, requirements, and expectations.
+						</li>
+						<li><strong>Results:</strong> Our custom NLP solutions are designed to deliver tangible results
+							and drive business value, whether it's through process automation, data insights, or
+							enhanced user experiences.</li>
+					</ul>
+
+					<h2>Get Started Today</h2>
+
+					<p>Ready to harness the power of custom NLP solutions to achieve your business goals? Contact us
+						today to discuss your requirements and learn how we can help you leverage the latest
+						advancements in NLP to drive innovation and success. Join the ranks of businesses worldwide who
+						trust us for cutting-edge custom NLP solutions.</p>
+				</div>
+
+				<div id="Tab12" class="tabcontent2">
+					<h1>Welcome to Our Text Annotation Service</h1>
+
+					<p>We understand the importance of labeled data for training machine learning models and improving
+						algorithm performance. Our Text Annotation service is designed to annotate text data with
+						relevant labels, enabling you to create high-quality training datasets for your NLP and machine
+						learning projects.</p>
+
+					<h2>What is Text Annotation?</h2>
+
+					<p>Text Annotation is the process of labeling text data with relevant tags, categories, or
+						attributes. Our Text Annotation service enables you to annotate text data with various types of
+						labels, including named entities, sentiment, parts of speech, and more, depending on your
+						specific requirements and use cases.</p>
+
+					<h2>How Our Service Works</h2>
+
+					<p>Using our intuitive annotation platform, simply upload the text data you want to annotate. Our
+						platform provides a user-friendly interface for annotating text data, allowing you to easily
+						select and apply labels to individual words, phrases, or sentences. You'll receive a labeled
+						dataset that can be used to train and evaluate machine learning models, enabling you to improve
+						algorithm performance and achieve better results.</p>
+
+					<h2>Key Features</h2>
+
+					<ul>
+						<li><strong>Annotation Types:</strong> Annotate text data with various types of labels,
+							including named entities, sentiment, parts of speech, and more, to meet your specific
+							requirements and use cases.</li>
+						<li><strong>Customization:</strong> Customize the annotation process and label schema to match
+							your annotation guidelines and quality standards, ensuring that the labeled data meets your
+							requirements.</li>
+						<li><strong>Quality Assurance:</strong> Our platform includes built-in tools and workflows for
+							quality assurance and validation, ensuring that the annotated data is accurate, consistent,
+							and reliable.</li>
+						<li><strong>Scalability:</strong> Our Text Annotation service scales to handle large volumes of
+							text data, enabling you to annotate datasets of any size with ease.</li>
+					</ul>
+
+					<h2>Why Choose Us?</h2>
+
+					<ul>
+						<li><strong>Expertise:</strong> With years of experience in text annotation and natural language
+							processing, our team of experts delivers high-quality annotated data that meets the needs of
+							machine learning and NLP projects.</li>
+						<li><strong>Efficiency:</strong> Our annotation platform is designed for efficiency and
+							productivity, allowing you to annotate text data quickly and accurately, without sacrificing
+							quality.</li>
+						<li><strong>Collaboration:</strong> We work closely with you throughout the annotation process,
+							providing guidance and support to ensure that the annotated data meets your requirements and
+							objectives.</li>
+					</ul>
+
+					<h2>Get Started Today</h2>
+
+					<p>Ready to annotate your text data and improve your machine learning models? Sign up for our Text
+						Annotation service today and unlock the power of labeled data for training and evaluation. Join
+						the ranks of businesses and researchers worldwide who trust us for high-quality text annotation
+						solutions.</p>
+				</div>
+
+				<div id="Tab13" class="tabcontent2">
+					<h1>Welcome to Our Research and Development Services</h1>
+
+					<p>We are committed to advancing the field of natural language processing (NLP) through research and
+						innovation. Our Research and Development services are designed to push the boundaries of NLP
+						technology, explore new ideas and techniques, and develop cutting-edge solutions to address
+						complex challenges.</p>
+
+					<h2>What are Research and Development Services?</h2>
+
+					<p>Research and Development (R&D) services involve conducting experiments, exploring new ideas, and
+						developing innovative solutions to advance the field of NLP. Our R&D services encompass a wide
+						range of activities, including algorithm development, model training, data analysis, and
+						experimental evaluation, with the goal of driving innovation and pushing the boundaries of what
+						is possible in NLP.</p>
+
+					<h2>How Our Service Works</h2>
+
+					<p>Using our dedicated team of researchers and engineers, we collaborate closely with you to
+						understand your goals, challenges, and requirements. We then leverage our expertise in NLP,
+						machine learning, and artificial intelligence to design and execute research projects that
+						address your specific needs and objectives. Throughout the R&D process, we provide regular
+						updates and insights, ensuring that you are involved and informed every step of the way.</p>
+
+					<h2>Key Features</h2>
+
+					<ul>
+						<li><strong>Custom Research Projects:</strong> Collaborate with our team to design and execute
+							custom research projects that address your specific challenges and objectives in NLP.</li>
+						<li><strong>Expertise:</strong> Benefit from our team's extensive expertise in NLP, machine
+							learning, and artificial intelligence, ensuring that your research projects are conducted
+							with the highest level of skill and professionalism.</li>
+						<li><strong>Innovation:</strong> Drive innovation and stay ahead of the curve with access to
+							cutting-edge research and development techniques, algorithms, and technologies in NLP.</li>
+						<li><strong>Collaboration:</strong> Work closely with our team throughout the R&D process,
+							providing input, feedback, and guidance to ensure that the research projects align with your
+							goals and objectives.</li>
+					</ul>
+
+					<h2>Why Choose Us?</h2>
+
+					<ul>
+						<li><strong>Expertise:</strong> With a dedicated team of researchers and engineers, we have the
+							expertise and experience to tackle even the most complex challenges in NLP.</li>
+						<li><strong>Innovation:</strong> We are committed to driving innovation in NLP through research
+							and development, pushing the boundaries of what is possible and exploring new ideas and
+							techniques.</li>
+						<li><strong>Collaboration:</strong> We believe in the power of collaboration and work closely
+							with our clients to ensure that their needs and objectives are met, every step of the way.
+						</li>
+					</ul>
+
+					<h2>Get Started Today</h2>
+
+					<p>Ready to embark on a journey of innovation and discovery in NLP? Contact us today to learn more
+						about our Research and Development services and how we can help you achieve your goals and
+						objectives. Join the ranks of businesses and organizations worldwide who trust us for
+						cutting-edge research and development solutions in NLP.</p>
+
+				</div>
+			</div>
+		</div>
+		<!-- <p><b>🔹 Sentiment Analysis:</b> Analyze text data to determine the sentiment expressed (positive, negative, or
 			neutral)
 			towards a particular topic, product, or brand.</p>
 
@@ -250,7 +1102,7 @@
 		<p>🔎 Are you searching for a seasoned Machine Learning / AI specialist capable of delivering tangible business
 			outcomes? Look no further. I am dedicated to taking full ownership of projects, allowing you to focus on
 			your
-			core business while I lead the success of your AI initiatives.</p>
+			core business while I lead the success of your AI initiatives.</p> -->
 
 	</div>
 
@@ -333,6 +1185,13 @@
 			</LI>
 			<br>
 		</UL>
+	</div>
+
+	<div id="Testimonials" class="tabcontent">
+		<blockquote>
+			<p>"I led EY’s AI Lab in Europe, where I worked with Arun on core client projects for about three years. Thanks to his rich academic and industrial experience on natural language processing (NLP), he played a pivotal role in all our NLP projects, leading some of them on his own and managing project engineers. A particularly challenging project needed a full engineering solution for signing international harmonized trade codes to product descriptions in multiple jurisdictions. Arun designed the entire NLP solution and executed it with his team thoroughly, achieving great success and client satisfaction. His designed architecture was then reused for tackling similar NLP problems in our company. Arun is a technical leader and a great asset for any organization. I cannot recommend him enough!"</p>
+			<footer>Luis Pizarro, EY <a href="https://www.linkedin.com/in/luishpizarro/"><img src="https://media.licdn.com/dms/image/C4E03AQELXDyMhtWCAw/profile-displayphoto-shrink_800_800/0/1651880153449?e=1719446400&v=beta&t=R8MHo1IQMMaShGpsfCgkUh8HzoHKvedfPocBm6IYEPo" alt="LinkedIn" style="width: 16px; height: 16px;"></a></footer>
+		</blockquote>
 	</div>
 
 	<div id="Resume" class="tabcontent">
@@ -433,7 +1292,7 @@
 	</div>
 
 	<script>
-		function openElement(evt, cityName) {
+		function openElement(evt, tabName) {
 			var i, tabcontent, tablinks;
 			tabcontent = document.getElementsByClassName("tabcontent");
 			for (i = 0; i < tabcontent.length; i++) {
@@ -443,11 +1302,37 @@
 			for (i = 0; i < tablinks.length; i++) {
 				tablinks[i].className = tablinks[i].className.replace(" active", "");
 			}
-			document.getElementById(cityName).style.display = "block";
+			document.getElementById(tabName).style.display = "block";
 			evt.currentTarget.className += "active";
 		}
 
+		// document.getElementById("defaultOpen").click();
+
+		function openTab(evt, tabName) {
+			var i, tabcontent, tablinks;
+			tabcontent = document.getElementsByClassName("tabcontent2");
+			for (i = 0; i < tabcontent.length; i++) {
+				tabcontent[i].style.display = "none";
+			}
+			tablinks = document.getElementsByClassName("tablink2");
+			for (i = 0; i < tablinks.length; i++) {
+				// tablinks[i].classList.remove("active");
+				tablinks[i].className = tablinks[i].className.replace(" active", "");
+			}
+			document.getElementById(tabName).style.display = "block";
+			// evt.currentTarget.classList.add("active");
+			evt.currentTarget.className += "active";
+		}
+
+		// Get the element with id="defaultOpen" and click on it
 		document.getElementById("defaultOpen").click();
+	</script>
+	<script type="module">
+		import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+		Chatbot.init({
+			chatflowid: "7661d951-f040-45b1-8485-2df753b7e2d9",
+			apiHost: "https://flowise-test-xgrp.onrender.com",
+		})
 	</script>
 </BODY>
 
