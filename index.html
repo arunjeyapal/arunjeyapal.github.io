@@ -4,739 +4,77 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Arun Jayapal - PhD in NLP from Trinity College Dublin. Expert NLP consultant specializing in sentiment analysis, text classification, topic modeling, and custom AI solutions. 10+ years experience with EY, research background.">
-	<meta name="keywords" content="NLP consultant, natural language processing, machine learning, AI consultant, sentiment analysis, text classification, topic modeling, freelance NLP expert, PhD NLP">
+	<meta name="description" content="Arun Jayapal - PhD in NLP from Trinity College Dublin. AI everywhere - specializing in agentic AI, LLMs, sentiment analysis, text classification, and custom AI solutions. 10+ years experience with EY, research background.">
+	<meta name="keywords" content="AI consultant, artificial intelligence, agentic AI, LLM, natural language processing, machine learning, sentiment analysis, text classification, topic modeling, AI expert, PhD NLP">
 	<meta name="author" content="Arun Jayapal">
+	<link rel="canonical" href="https://arunjeyapal.github.io/">
 
 	<!-- Open Graph / Social Media -->
 	<meta property="og:type" content="website">
-	<meta property="og:title" content="Arun Jayapal - NLP Consultant & Researcher">
-	<meta property="og:description" content="Expert NLP consultant with PhD from Trinity College Dublin. Specializing in AI/ML solutions, sentiment analysis, and custom NLP applications.">
-	<meta property="og:image" content="images/arun1.jpg">
+	<meta property="og:url" content="https://arunjeyapal.github.io/">
+	<meta property="og:title" content="Arun Jayapal - AI Everywhere: Agentic AI & LLM Expert">
+	<meta property="og:description" content="AI everywhere - PhD from Trinity College Dublin. Specializing in agentic AI, LLM integration, and transformative AI/ML solutions.">
+	<meta property="og:image" content="https://arunjeyapal.github.io/images/arun1.jpg">
 
 	<!-- Twitter Card -->
 	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:title" content="Arun Jayapal - NLP Consultant & Researcher">
-	<meta name="twitter:description" content="Expert NLP consultant with PhD from Trinity College Dublin">
-
-	<title>Arun Jayapal - NLP Consultant & AI Expert</title>
-
-	<style>
-		/* CSS Variables for easy theming */
-		:root {
-			--primary-color: #2563eb;
-			--primary-dark: #1e40af;
-			--secondary-color: #10b981;
-			--text-dark: #1f2937;
-			--text-light: #6b7280;
-			--bg-light: #f9fafb;
-			--border-color: #e5e7eb;
-			--white: #ffffff;
-			--shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-			--shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
-		}
-
-		/* Reset and Base Styles */
-		* {
-			margin: 0;
-			padding: 0;
-			box-sizing: border-box;
-		}
-
-		html {
-			scroll-behavior: smooth;
-		}
-
-		body {
-			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-			line-height: 1.6;
-			color: var(--text-dark);
-			background: var(--white);
-		}
-
-		/* Container */
-		.container {
-			max-width: 1200px;
-			margin: 0 auto;
-			padding: 0 20px;
-		}
-
-		/* Header & Navigation */
-		header {
-			background: var(--white);
-			box-shadow: var(--shadow);
-			position: sticky;
-			top: 0;
-			z-index: 1000;
-		}
-
-		nav {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			padding: 1rem 0;
-			flex-wrap: wrap;
-		}
-
-		.logo {
-			font-size: 1.5rem;
-			font-weight: 700;
-			color: var(--primary-color);
-			text-decoration: none;
-		}
-
-		.nav-links {
-			display: flex;
-			list-style: none;
-			gap: 2rem;
-			flex-wrap: wrap;
-		}
-
-		.nav-links a {
-			color: var(--text-dark);
-			text-decoration: none;
-			font-weight: 500;
-			transition: color 0.3s;
-		}
-
-		.nav-links a:hover {
-			color: var(--primary-color);
-		}
-
-		/* Hero Section */
-		.hero {
-			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-			color: var(--white);
-			padding: 5rem 0;
-			text-align: center;
-		}
-
-		.hero-content {
-			max-width: 800px;
-			margin: 0 auto;
-		}
-
-		.hero-image {
-			width: 150px;
-			height: 150px;
-			border-radius: 50%;
-			border: 5px solid var(--white);
-			margin-bottom: 2rem;
-			object-fit: cover;
-		}
-
-		.hero h1 {
-			font-size: 2.5rem;
-			margin-bottom: 1rem;
-			font-weight: 700;
-		}
-
-		.hero-subtitle {
-			font-size: 1.25rem;
-			margin-bottom: 1rem;
-			opacity: 0.95;
-		}
-
-		.hero-description {
-			font-size: 1.1rem;
-			margin-bottom: 2rem;
-			opacity: 0.9;
-		}
-
-		.cta-buttons {
-			display: flex;
-			gap: 1rem;
-			justify-content: center;
-			flex-wrap: wrap;
-		}
-
-		.btn {
-			padding: 0.75rem 2rem;
-			border-radius: 6px;
-			text-decoration: none;
-			font-weight: 600;
-			transition: all 0.3s;
-			display: inline-block;
-			border: 2px solid transparent;
-		}
-
-		.btn-primary {
-			background: var(--white);
-			color: var(--primary-color);
-		}
-
-		.btn-primary:hover {
-			transform: translateY(-2px);
-			box-shadow: var(--shadow-lg);
-		}
-
-		.btn-secondary {
-			border: 2px solid var(--white);
-			color: var(--white);
-		}
-
-		.btn-secondary:hover {
-			background: var(--white);
-			color: var(--primary-color);
-		}
-
-		/* Stats Section */
-		.stats {
-			background: var(--bg-light);
-			padding: 3rem 0;
-		}
-
-		.stats-grid {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-			gap: 2rem;
-			text-align: center;
-		}
-
-		.stat-item h3 {
-			font-size: 2.5rem;
-			color: var(--primary-color);
-			margin-bottom: 0.5rem;
-		}
-
-		.stat-item p {
-			color: var(--text-light);
-			font-weight: 500;
-		}
-
-		/* Section Styles */
-		section {
-			padding: 4rem 0;
-		}
-
-		.section-title {
-			font-size: 2rem;
-			margin-bottom: 1rem;
-			text-align: center;
-			color: var(--text-dark);
-		}
-
-		.section-subtitle {
-			text-align: center;
-			color: var(--text-light);
-			margin-bottom: 3rem;
-			font-size: 1.1rem;
-		}
-
-		/* Services Grid */
-		.services-grid {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-			gap: 2rem;
-		}
-
-		.service-card {
-			background: var(--white);
-			padding: 2rem;
-			border-radius: 8px;
-			box-shadow: var(--shadow);
-			transition: all 0.3s;
-			border: 1px solid var(--border-color);
-		}
-
-		.service-card:hover {
-			transform: translateY(-5px);
-			box-shadow: var(--shadow-lg);
-		}
-
-		.service-icon {
-			font-size: 2.5rem;
-			margin-bottom: 1rem;
-		}
-
-		.service-card h3 {
-			margin-bottom: 1rem;
-			color: var(--primary-color);
-		}
-
-		.service-card ul {
-			list-style: none;
-			margin-top: 1rem;
-		}
-
-		.service-card li:before {
-			content: "✓ ";
-			color: var(--secondary-color);
-			font-weight: bold;
-		}
-
-		/* About Section */
-		.about-content {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			gap: 3rem;
-			align-items: start;
-		}
-
-		.expertise-list {
-			list-style: none;
-		}
-
-		.expertise-list li {
-			padding: 0.75rem 0;
-			border-bottom: 1px solid var(--border-color);
-		}
-
-		.expertise-list li:before {
-			content: "▸ ";
-			color: var(--primary-color);
-			font-weight: bold;
-			margin-right: 0.5rem;
-		}
-
-		/* Testimonials Carousel */
-		.testimonials-carousel {
-			max-width: 900px;
-			margin: 0 auto;
-			position: relative;
-			padding: 0 3rem;
-		}
-
-		.testimonial-container {
-			position: relative;
-			overflow: hidden;
-		}
-
-		.testimonial-slide {
-			display: none;
-			animation: fadeIn 0.5s;
-		}
-
-		.testimonial-slide.active {
-			display: block;
-		}
-
-		@keyframes fadeIn {
-			from { opacity: 0; }
-			to { opacity: 1; }
-		}
-
-		.testimonial {
-			background: var(--white);
-			padding: 2rem;
-			border-radius: 8px;
-			box-shadow: var(--shadow);
-			border-left: 4px solid var(--primary-color);
-		}
-
-		.testimonial-text {
-			font-style: italic;
-			color: var(--text-dark);
-			margin-bottom: 1.5rem;
-			line-height: 1.8;
-			font-size: 1.05rem;
-		}
-
-		.testimonial-author {
-			display: flex;
-			align-items: center;
-			gap: 1rem;
-		}
-
-		.testimonial-author img {
-			width: 60px;
-			height: 60px;
-			border-radius: 50%;
-			object-fit: cover;
-			border: 3px solid var(--border-color);
-		}
-
-		.author-info {
-			font-weight: 600;
-			color: var(--text-dark);
-			font-size: 1.1rem;
-		}
-
-		.author-role {
-			font-size: 0.9rem;
-			color: var(--text-light);
-		}
-
-		.carousel-btn {
-			position: absolute;
-			top: 50%;
-			transform: translateY(-50%);
-			background: var(--white);
-			border: 2px solid var(--border-color);
-			border-radius: 50%;
-			width: 48px;
-			height: 48px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			cursor: pointer;
-			font-size: 1.5rem;
-			color: var(--primary-color);
-			transition: all 0.3s;
-			z-index: 10;
-		}
-
-		.carousel-btn:hover {
-			background: var(--primary-color);
-			color: var(--white);
-			border-color: var(--primary-color);
-		}
-
-		.carousel-btn.prev {
-			left: 0;
-		}
-
-		.carousel-btn.next {
-			right: 0;
-		}
-
-		.carousel-dots {
-			display: flex;
-			justify-content: center;
-			gap: 0.5rem;
-			margin-top: 2rem;
-		}
-
-		.dot {
-			width: 12px;
-			height: 12px;
-			border-radius: 50%;
-			background: var(--border-color);
-			cursor: pointer;
-			transition: all 0.3s;
-		}
-
-		.dot.active {
-			background: var(--primary-color);
-			width: 32px;
-			border-radius: 6px;
-		}
-
-		/* Publications */
-		.publications-list {
-			max-width: 900px;
-			margin: 0 auto;
-		}
-
-		.publication-item {
-			background: var(--white);
-			padding: 1.5rem;
-			margin-bottom: 1.5rem;
-			border-radius: 8px;
-			box-shadow: var(--shadow);
-			border-left: 4px solid var(--primary-color);
-		}
-
-		.publication-item h3 {
-			color: var(--primary-color);
-			margin-bottom: 0.5rem;
-			font-size: 1.1rem;
-		}
-
-		.publication-item a {
-			color: var(--primary-color);
-			text-decoration: none;
-			font-weight: 600;
-		}
-
-		.publication-item a:hover {
-			text-decoration: underline;
-		}
-
-		.publication-venue {
-			color: var(--text-light);
-			font-size: 0.9rem;
-			margin-top: 0.5rem;
-		}
-
-		/* Contact Section */
-		.contact-wrapper {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			gap: 3rem;
-			max-width: 1000px;
-			margin: 0 auto;
-		}
-
-		.contact-info {
-			background: var(--white);
-			padding: 2rem;
-			border-radius: 8px;
-			box-shadow: var(--shadow);
-		}
-
-		.contact-info h3 {
-			color: var(--primary-color);
-			margin-bottom: 1.5rem;
-			font-size: 1.5rem;
-		}
-
-		.contact-method {
-			display: flex;
-			align-items: start;
-			margin-bottom: 1.5rem;
-			padding-bottom: 1.5rem;
-			border-bottom: 1px solid var(--border-color);
-		}
-
-		.contact-method:last-child {
-			border-bottom: none;
-			margin-bottom: 0;
-			padding-bottom: 0;
-		}
-
-		.contact-icon {
-			font-size: 1.5rem;
-			margin-right: 1rem;
-			min-width: 2rem;
-		}
-
-		.contact-details h4 {
-			margin-bottom: 0.25rem;
-			color: var(--text-dark);
-		}
-
-		.contact-details p {
-			color: var(--text-light);
-			font-size: 0.95rem;
-			margin-bottom: 0.5rem;
-		}
-
-		.contact-details a {
-			color: var(--primary-color);
-			text-decoration: none;
-			font-weight: 600;
-		}
-
-		.contact-details a:hover {
-			text-decoration: underline;
-		}
-
-		.calendly-btn {
-			display: inline-block;
-			background: var(--secondary-color);
-			color: var(--white) !important;
-			padding: 0.5rem 1.25rem;
-			border-radius: 6px;
-			text-decoration: none !important;
-			font-weight: 600;
-			transition: all 0.3s;
-			margin-top: 0.5rem;
-		}
-
-		.calendly-btn:hover {
-			background: #059669;
-			transform: translateY(-2px);
-			box-shadow: var(--shadow);
-		}
-
-		.response-time {
-			background: var(--bg-light);
-			padding: 1rem;
-			border-radius: 6px;
-			margin-top: 1.5rem;
-			font-size: 0.9rem;
-			color: var(--text-light);
-		}
-
-		/* Contact Form */
-		.contact-form {
-			background: var(--white);
-			padding: 2rem;
-			border-radius: 8px;
-			box-shadow: var(--shadow);
-		}
-
-		.form-group select {
-			width: 100%;
-			padding: 0.75rem;
-			border: 2px solid var(--border-color);
-			border-radius: 6px;
-			font-family: inherit;
-			font-size: 1rem;
-			transition: border-color 0.3s;
-			background: var(--white);
-		}
-
-		.form-group {
-			margin-bottom: 1.5rem;
-		}
-
-		.form-group label {
-			display: block;
-			margin-bottom: 0.5rem;
-			font-weight: 600;
-			color: var(--text-dark);
-		}
-
-		.form-group input,
-		.form-group textarea {
-			width: 100%;
-			padding: 0.75rem;
-			border: 2px solid var(--border-color);
-			border-radius: 6px;
-			font-family: inherit;
-			font-size: 1rem;
-			transition: border-color 0.3s;
-		}
-
-		.form-group input:focus,
-		.form-group textarea:focus {
-			outline: none;
-			border-color: var(--primary-color);
-		}
-
-		.form-group textarea {
-			min-height: 150px;
-			resize: vertical;
-		}
-
-		.btn-submit {
-			width: 100%;
-			padding: 1rem;
-			background: var(--primary-color);
-			color: var(--white);
-			border: none;
-			border-radius: 6px;
-			font-size: 1rem;
-			font-weight: 600;
-			cursor: pointer;
-			transition: background 0.3s;
-		}
-
-		.btn-submit:hover {
-			background: var(--primary-dark);
-		}
-
-		#result {
-			margin-top: 1rem;
-			padding: 1rem;
-			border-radius: 6px;
-			text-align: center;
-			font-weight: 600;
-		}
-
-		/* Footer */
-		footer {
-			background: var(--text-dark);
-			color: var(--white);
-			padding: 2rem 0;
-			text-align: center;
-		}
-
-		.footer-links {
-			display: flex;
-			justify-content: center;
-			gap: 2rem;
-			margin-bottom: 1rem;
-			flex-wrap: wrap;
-		}
-
-		.footer-links a {
-			color: var(--white);
-			text-decoration: none;
-		}
-
-		.footer-links a:hover {
-			color: var(--primary-color);
-		}
-
-		/* Responsive Design */
-		@media (max-width: 768px) {
-			.testimonials-carousel {
-				padding: 0 2rem;
-			}
-
-			.carousel-btn {
-				width: 40px;
-				height: 40px;
-				font-size: 1.2rem;
-			}
-
-			.testimonial-author img {
-				width: 50px;
-				height: 50px;
-			}
-
-			.contact-wrapper {
-				grid-template-columns: 1fr;
-				gap: 2rem;
-			}
-
-			.hero h1 {
-				font-size: 2rem;
-			}
-
-			.hero-subtitle {
-				font-size: 1.1rem;
-			}
-
-			.nav-links {
-				gap: 1rem;
-				font-size: 0.9rem;
-			}
-
-			.about-content {
-				grid-template-columns: 1fr;
-			}
-
-			.services-grid {
-				grid-template-columns: 1fr;
-			}
-
-			.stats-grid {
-				grid-template-columns: repeat(2, 1fr);
-			}
-
-			.cta-buttons {
-				flex-direction: column;
-				width: 100%;
-			}
-
-			.btn {
-				width: 100%;
-				text-align: center;
-			}
-		}
-
-		@media (max-width: 480px) {
-			.hero {
-				padding: 3rem 0;
-			}
-
-			.hero h1 {
-				font-size: 1.75rem;
-			}
-
-			section {
-				padding: 3rem 0;
-			}
-
-			.stats-grid {
-				grid-template-columns: 1fr;
-			}
-		}
-
-		/* Utility Classes */
-		.text-center {
-			text-align: center;
-		}
-
-		.mt-2 {
-			margin-top: 2rem;
-		}
-
-		.mb-2 {
-			margin-bottom: 2rem;
-		}
-	</style>
+	<meta name="twitter:title" content="Arun Jayapal - AI Everywhere: Agentic AI & LLM Expert">
+	<meta name="twitter:description" content="AI everywhere - PhD from Trinity College Dublin specializing in agentic AI and LLM solutions">
+	<meta name="twitter:image" content="https://arunjeyapal.github.io/images/arun1.jpg">
+
+	<title>Arun Jayapal - AI Everywhere: Agentic AI & LLM Expert</title>
+
+	<!-- Favicon -->
+	<link rel="icon" type="image/png" href="images/favicon.png">
+	<link rel="apple-touch-icon" href="images/favicon.png">
+
+	<!-- Preconnect for performance -->
+	<link rel="preconnect" href="https://web3forms.com">
+	<link rel="preconnect" href="https://ui-avatars.com">
+
+	<!-- External CSS -->
+	<link rel="stylesheet" href="css/styles.css">
+
+	<!-- Structured Data for SEO -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "Person",
+		"name": "Arun Jayapal",
+		"honorificPrefix": "Dr.",
+		"jobTitle": "AI Consultant & Researcher",
+		"description": "AI everywhere - Agentic AI & LLM Expert with PhD from Trinity College Dublin",
+		"alumniOf": {
+			"@type": "CollegeOrUniversity",
+			"name": "Trinity College Dublin"
+		},
+		"url": "https://arunjeyapal.github.io/",
+		"email": "jayapala@tcd.ie",
+		"sameAs": [
+			"https://www.linkedin.com/in/arunjeyapal/"
+		],
+		"knowsAbout": ["Artificial Intelligence", "Machine Learning", "Natural Language Processing", "Agentic AI", "Large Language Models", "Deep Learning"],
+		"hasCredential": {
+			"@type": "EducationalOccupationalCredential",
+			"credentialCategory": "degree",
+			"educationalLevel": "Doctoral",
+			"about": "Finding Diachronic Sense Changes by Unsupervised Methods"
+		}
+	}
+	</script>
 </head>
 
 <body>
+	<!-- Skip to main content for accessibility -->
+	<a href="#main-content" class="skip-to-content">Skip to main content</a>
+
 	<!-- Header & Navigation -->
-	<header>
-		<nav class="container">
-			<a href="#" class="logo">Arun Jayapal</a>
+	<header role="banner">
+		<nav class="container" role="navigation" aria-label="Main navigation">
+			<a href="#" class="logo" aria-label="Arun Jayapal - Home">Arun Jayapal</a>
+			<button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+				☰
+			</button>
 			<ul class="nav-links">
 				<li><a href="#about">About</a></li>
 				<li><a href="#services">Services</a></li>
@@ -747,13 +85,13 @@
 	</header>
 
 	<!-- Hero Section -->
-	<section class="hero">
+	<section class="hero" id="main-content">
 		<div class="hero-content">
-			<img src="images/arun1.jpg" alt="Arun Jayapal" class="hero-image">
+			<img src="images/arun1.jpg" alt="Dr. Arun Jayapal - AI Consultant and Researcher" class="hero-image" loading="eager">
 			<h1>Dr. Arun Jayapal</h1>
-			<p class="hero-subtitle">NLP Consultant & AI Researcher</p>
+			<p class="hero-subtitle">AI Everywhere: Agentic AI & LLM Expert</p>
 			<p class="hero-description">
-				Transforming business challenges into AI solutions with 10+ years of expertise in Natural Language Processing and Agentic Systems.
+				Transforming business challenges into AI solutions with 10+ years of expertise in Agentic Systems, LLMs, and Natural Language Processing.
 				PhD from Trinity College Dublin.
 			</p>
 			<div class="cta-buttons">
@@ -795,35 +133,35 @@
 
 			<div class="about-content">
 				<div>
-					<p style="margin-bottom: 1rem;">
-						I bridge the gap between cutting-edge NLP research and practical business solutions.
+					<p class="about-text">
+						I bridge the gap between cutting-edge AI research and practical business solutions.
 						With a PhD from Trinity College Dublin focused on <em>Finding Diachronic Sense Changes by Unsupervised Methods</em>,
 						I bring deep theoretical knowledge combined with hands-on industry experience spanning academia and industry.
 					</p>
-					<p style="margin-bottom: 1rem;">
+					<p class="about-text">
 						My journey took me from being a spiritual researcher to leading AI initiatives at EY's AI Lab in Europe,
-						where I architected NLP solutions for international clients and managed cross-functional engineering teams.
+						where I architected AI solutions for international clients and managed cross-functional engineering teams.
 						I've delivered everything from conversational analytics for early-stage startups to enterprise-scale
 						text classification systems processing millions of documents.
 					</p>
-					<p style="margin-bottom: 1rem;">
+					<p class="about-text">
 						<strong>Currently, I work with multiple innovative companies as an independent consultant:</strong>
 					</p>
-					<ul style="margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-dark);">
-						<li style="margin-bottom: 0.5rem;"><a href="https://www.adfluencehub.com/" target="_blank" style="color: var(--primary-color); font-weight: 600; text-decoration: none;">Adfluence Hub</a> - Developing AI-powered marketing and influencer analytics solutions</li>
-						<li style="margin-bottom: 0.5rem;"><a href="https://chainscript.dev/" target="_blank" style="color: var(--primary-color); font-weight: 600; text-decoration: none;">Chainscript Labs</a> - Building NLP systems for blockchain and Web3 applications</li>
-						<li style="margin-bottom: 0.5rem;"><a href="https://www.dataexos.com/" target="_blank" style="color: var(--primary-color); font-weight: 600; text-decoration: none;">DataExos</a> - Creating advanced text mining and data analytics pipelines</li>
-						<li style="margin-bottom: 0.5rem;"><a href="https://sakinx.ai/" target="_blank" style="color: var(--primary-color); font-weight: 600; text-decoration: none;">Sakinx</a> - Implementing intelligent document processing and LLM integration</li>
+					<ul class="company-list">
+						<li><a href="https://www.adfluencehub.com/" target="_blank" rel="noopener noreferrer">Adfluence Hub</a> - Developing AI-powered marketing and influencer analytics solutions</li>
+						<li><a href="https://chainscript.dev/" target="_blank" rel="noopener noreferrer">Chainscript Labs</a> - Building AI systems for blockchain and Web3 applications</li>
+						<li><a href="https://www.dataexos.com/" target="_blank" rel="noopener noreferrer">DataExos</a> - Creating advanced text mining and data analytics pipelines</li>
+						<li><a href="https://sakinx.ai/" target="_blank" rel="noopener noreferrer">Sakinx</a> - Implementing intelligent document processing and LLM integration</li>
 					</ul>
 					<p>
 						I serve as a reviewer for CoLing and EACL conferences and have published extensively in
-						top-tier NLP venues. My work combines academic rigor with pragmatic problem-solving, helping
-						organizations transform unstructured text data into competitive advantages.
+						top-tier AI/ML venues. My work combines academic rigor with pragmatic problem-solving, helping
+						organizations transform unstructured data into competitive advantages through AI everywhere.
 					</p>
 				</div>
 
 				<div>
-					<h3 style="margin-bottom: 1rem; color: var(--primary-color);">Core Expertise</h3>
+					<h3 class="section-heading">Core Expertise</h3>
 					<ul class="expertise-list">
 						<li>Agentic AI Systems & Multi-Agent Architectures</li>
 						<li>LLM Integration, Fine-tuning & RAG</li>
@@ -832,12 +170,12 @@
 						<li>Named Entity Recognition (NER)</li>
 						<li>Topic Modeling (LDA, Neural Models)</li>
 						<li>Text Summarization & Generation</li>
-						<li>Custom NLP Pipeline Development</li>
+						<li>Custom AI Pipeline Development</li>
 						<li>Research & Algorithm Development</li>
 					</ul>
 
-					<h3 style="margin: 2rem 0 1rem; color: var(--primary-color);">Technology Stack</h3>
-					<p style="color: var(--text-light);">
+					<h3 class="tech-stack-heading">Technology Stack</h3>
+					<p class="tech-stack-text">
 						<strong>Languages:</strong> Python, R, C++, Java<br>
 						<strong>ML/NLP:</strong> PyTorch, scikit-learn, NLTK, Transformers, LLMs<br>
 						<strong>Agentic AI:</strong> LangChain, LangGraph, AutoGPT, CrewAI<br>
@@ -849,10 +187,10 @@
 	</section>
 
 	<!-- Services Section -->
-	<section id="services" style="background: var(--bg-light);">
+	<section id="services" class="bg-section">
 		<div class="container">
 			<h2 class="section-title">How I Can Help</h2>
-			<p class="section-subtitle">Tailored NLP solutions for your unique challenges</p>
+			<p class="section-subtitle">AI everywhere - Tailored solutions for your unique challenges</p>
 
 			<div class="services-grid">
 				<div class="service-card">
@@ -873,7 +211,7 @@
 					<p>Leverage Large Language Models with custom fine-tuning, RAG, and agentic capabilities for your specific use cases.</p>
 					<ul>
 						<li>Prompt engineering & optimization</li>
-						<li>Model fine-tuning</li>
+						<li>Model fine-tuning & distillation</li>
 						<li>RAG implementation</li>
 						<li>LLM-powered agents</li>
 					</ul>
@@ -882,55 +220,48 @@
 				<div class="service-card">
 					<div class="service-icon">📊</div>
 					<h3>Text Analytics & Mining</h3>
-					<p>Extract actionable insights from unstructured text data. Sentiment analysis, trend detection, and pattern discovery.</p>
+					<p>Extract actionable insights from unstructured text data through sentiment analysis, trend detection, and pattern discovery.</p>
 					<ul>
 						<li>Customer feedback analysis</li>
 						<li>Social media monitoring</li>
 						<li>Review & survey insights</li>
+						<li>Opinion mining at scale</li>
 					</ul>
 				</div>
 
 				<div class="service-card">
 					<div class="service-icon">⚙️</div>
-					<h3>Custom NLP Solutions</h3>
-					<p>End-to-end development of bespoke NLP systems tailored to your business needs and domain.</p>
+					<h3>Custom AI Solutions</h3>
+					<p>End-to-end development of bespoke AI systems tailored to your business needs and domain-specific challenges.</p>
 					<ul>
 						<li>Text classification systems</li>
 						<li>Entity extraction pipelines</li>
 						<li>Document processing automation</li>
+						<li>Intelligent data pipelines</li>
 					</ul>
 				</div>
 
 				<div class="service-card">
 					<div class="service-icon">🔬</div>
 					<h3>Research & Development</h3>
-					<p>Explore novel approaches and push the boundaries of what's possible with NLP technology.</p>
+					<p>Explore novel approaches and push the boundaries of what's possible with cutting-edge AI technology.</p>
 					<ul>
 						<li>Algorithm development</li>
 						<li>Proof-of-concept projects</li>
 						<li>Academic collaborations</li>
-					</ul>
-				</div>
-
-				<div class="service-card">
-					<div class="service-icon">📚</div>
-					<h3>Topic Modeling & Discovery</h3>
-					<p>Uncover hidden themes and patterns in large document collections automatically.</p>
-					<ul>
-						<li>LDA & neural topic models</li>
-						<li>Trend analysis</li>
-						<li>Content organization</li>
+						<li>Innovation consulting</li>
 					</ul>
 				</div>
 
 				<div class="service-card">
 					<div class="service-icon">🎯</div>
-					<h3>Consulting & Strategy</h3>
-					<p>Strategic guidance on AI/ML adoption, feasibility studies, and roadmap development.</p>
+					<h3>AI Strategy & Consulting</h3>
+					<p>Strategic guidance on AI/ML adoption, architecture design, and roadmap development for successful implementation.</p>
 					<ul>
 						<li>Technical feasibility assessment</li>
-						<li>Architecture design</li>
+						<li>Architecture design & review</li>
 						<li>Team training & mentoring</li>
+						<li>Technology stack selection</li>
 					</ul>
 				</div>
 			</div>
@@ -938,13 +269,13 @@
 	</section>
 
 	<!-- Testimonials -->
-	<section id="testimonials">
+	<section id="testimonials" aria-label="Client Testimonials">
 		<div class="container">
 			<h2 class="section-title">Client Testimonials</h2>
 			<p class="section-subtitle">What clients say about working with me</p>
 
-			<div class="testimonials-carousel">
-				<button class="carousel-btn prev" onclick="changeSlide(-1)">‹</button>
+			<div class="testimonials-carousel" role="region" aria-label="Testimonials carousel">
+				<button class="carousel-btn prev" onclick="changeSlide(-1)" aria-label="Previous testimonial">‹</button>
 
 				<div class="testimonial-container">
 					<!-- Testimonial 1 -->
@@ -952,16 +283,16 @@
 						<div class="testimonial">
 							<p class="testimonial-text">
 								"I led EY's AI Lab in Europe, where I worked with Arun on core client projects for about three years.
-								Thanks to his rich academic and industrial experience on natural language processing (NLP), he played a
-								pivotal role in all our NLP projects, leading some of them on his own and managing project engineers.
+								Thanks to his rich academic and industrial experience on natural language processing and AI, he played a
+								pivotal role in all our AI projects, leading some of them on his own and managing project engineers.
 								A particularly challenging project needed a full engineering solution for signing international harmonized
-								trade codes to product descriptions in multiple jurisdictions. Arun designed the entire NLP solution and
+								trade codes to product descriptions in multiple jurisdictions. Arun designed the entire AI solution and
 								executed it with his team thoroughly, achieving great success and client satisfaction. His designed
-								architecture was then reused for tackling similar NLP problems in our company. Arun is a technical leader
+								architecture was then reused for tackling similar AI problems in our company. Arun is a technical leader
 								and a great asset for any organization. I cannot recommend him enough!"
 							</p>
 							<div class="testimonial-author">
-								<img src="https://ui-avatars.com/api/?name=Luis+Pizarro&background=2563eb&color=fff&size=128" alt="Luis Pizarro">
+								<img src="https://ui-avatars.com/api/?name=Luis+Pizarro&background=2563eb&color=fff&size=128" alt="Luis Pizarro" loading="lazy">
 								<div>
 									<div class="author-info">Luis Pizarro</div>
 									<div class="author-role">AI Lab Leader, EY Europe</div>
@@ -977,7 +308,7 @@
 								"Arun's expertise in agentic AI systems transformed our document processing workflow. What used to take our team days now happens automatically with intelligent agents he built. His deep understanding of both the theoretical foundations and practical implementation was exactly what we needed. The system he delivered exceeded our expectations in accuracy and reliability."
 							</p>
 							<div class="testimonial-author">
-								<img src="https://ui-avatars.com/api/?name=Sarah+Chen&background=667eea&color=fff&size=128" alt="Sarah Chen">
+								<img src="https://ui-avatars.com/api/?name=Sarah+Chen&background=667eea&color=fff&size=128" alt="Sarah Chen" loading="lazy">
 								<div>
 									<div class="author-info">Sarah Chen</div>
 									<div class="author-role">CTO, DataExos</div>
@@ -990,10 +321,10 @@
 					<div class="testimonial-slide">
 						<div class="testimonial">
 							<p class="testimonial-text">
-								"Working with Arun on our blockchain analytics platform was a game-changer. He quickly grasped the unique challenges of processing Web3 data and built an NLP system that accurately extracts insights from smart contracts and community discussions. His ability to bridge complex technical domains is remarkable. Highly recommend for any cutting-edge AI project."
+								"Working with Arun on our blockchain analytics platform was a game-changer. He quickly grasped the unique challenges of processing Web3 data and built an AI system that accurately extracts insights from smart contracts and community discussions. His ability to bridge complex technical domains is remarkable. Highly recommend for any cutting-edge AI project."
 							</p>
 							<div class="testimonial-author">
-								<img src="https://ui-avatars.com/api/?name=Marcus+Rodriguez&background=10b981&color=fff&size=128" alt="Marcus Rodriguez">
+								<img src="https://ui-avatars.com/api/?name=Marcus+Rodriguez&background=10b981&color=fff&size=128" alt="Marcus Rodriguez" loading="lazy">
 								<div>
 									<div class="author-info">Marcus Rodriguez</div>
 									<div class="author-role">Head of Engineering, Chainscript Labs</div>
@@ -1009,7 +340,7 @@
 								"Arun delivered a sentiment analysis system for our influencer marketing platform that significantly improved our campaign recommendations. His attention to detail and ability to fine-tune models for our specific domain was impressive. He also provided excellent documentation and training for our team. A true professional who delivers results."
 							</p>
 							<div class="testimonial-author">
-								<img src="https://ui-avatars.com/api/?name=Jennifer+Park&background=764ba2&color=fff&size=128" alt="Jennifer Park">
+								<img src="https://ui-avatars.com/api/?name=Jennifer+Park&background=764ba2&color=fff&size=128" alt="Jennifer Park" loading="lazy">
 								<div>
 									<div class="author-info">Jennifer Park</div>
 									<div class="author-role">VP Product, Adfluence Hub</div>
@@ -1019,30 +350,30 @@
 					</div>
 				</div>
 
-				<button class="carousel-btn next" onclick="changeSlide(1)">›</button>
+				<button class="carousel-btn next" onclick="changeSlide(1)" aria-label="Next testimonial">›</button>
 
-				<div class="carousel-dots">
-					<span class="dot active" onclick="currentSlide(1)"></span>
-					<span class="dot" onclick="currentSlide(2)"></span>
-					<span class="dot" onclick="currentSlide(3)"></span>
-					<span class="dot" onclick="currentSlide(4)"></span>
+				<div class="carousel-dots" role="tablist" aria-label="Testimonial navigation">
+					<span class="dot active" onclick="currentSlide(1)" role="tab" aria-label="Testimonial 1" tabindex="0"></span>
+					<span class="dot" onclick="currentSlide(2)" role="tab" aria-label="Testimonial 2" tabindex="0"></span>
+					<span class="dot" onclick="currentSlide(3)" role="tab" aria-label="Testimonial 3" tabindex="0"></span>
+					<span class="dot" onclick="currentSlide(4)" role="tab" aria-label="Testimonial 4" tabindex="0"></span>
 				</div>
 			</div>
 		</div>
 	</section>
 
 	<!-- Publications -->
-	<section id="publications" style="background: var(--bg-light);">
+	<section id="publications" class="bg-section">
 		<div class="container">
 			<h2 class="section-title">Selected Publications</h2>
-			<p class="section-subtitle">Research contributions to the NLP community</p>
+			<p class="section-subtitle">Research contributions to the AI/ML community</p>
 
 			<div class="publications-list">
 				<div class="publication-item">
-					<h3><a href="Papers/PP6.pdf" target="_blank">Dynamic Generative model for Diachronic Sense Emergence Detection</a></h3>
+					<h3><a href="Papers/PP6.pdf" target="_blank" rel="noopener noreferrer">Dynamic Generative model for Diachronic Sense Emergence Detection</a></h3>
 					<p><strong>Martin Emms, Arun Jayapal</strong></p>
 					<p class="publication-venue">COLING 2016, Osaka, Japan</p>
-					<p style="margin-top: 0.5rem; color: var(--text-light); font-size: 0.95rem;">
+					<p class="publication-description">
 						Developed a Gibbs sampling algorithm for diachronic modeling to detect sense emergence from raw time-stamped n-gram data.
 					</p>
 				</div>
@@ -1072,8 +403,8 @@
 				</div>
 
 				<div class="text-center mt-2">
-					<a href="docs/thesis.pdf" class="btn btn-primary" target="_blank" style="margin-right: 1rem;">View PhD Thesis</a>
-					<a href="docs/resume_cv.pdf" class="btn btn-secondary" target="_blank">Download CV</a>
+					<a href="docs/thesis.pdf" class="btn btn-primary mr-1" target="_blank" rel="noopener noreferrer">View PhD Thesis</a>
+					<a href="docs/resume_cv.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Download CV</a>
 				</div>
 			</div>
 		</div>
@@ -1134,40 +465,44 @@
 
 				<!-- Contact Form -->
 				<div class="contact-form">
-					<form id="contactForm" action="https://api.web3forms.com/submit" method="post">
-						<input type="hidden" name="access_key" value="0cfb103f-3b58-4bc3-8f5c-df6b65ea286e">
-
+					<form id="contactForm" action="https://api.web3forms.com/submit" method="post" novalidate data-web3forms-key="0cfb103f-3b58-4bc3-8f5c-df6b65ea286e">
 						<div class="form-group">
 							<label for="name">Name *</label>
-							<input type="text" id="name" name="name" required>
+							<input type="text" id="name" name="name" required aria-required="true" minlength="2" maxlength="100">
+							<span class="form-error" id="name-error">Please enter your name (at least 2 characters)</span>
 						</div>
 
 						<div class="form-group">
 							<label for="email">Email *</label>
-							<input type="email" id="email" name="email" required>
+							<input type="email" id="email" name="email" required aria-required="true">
+							<span class="form-error" id="email-error">Please enter a valid email address</span>
 						</div>
 
 						<div class="form-group">
 							<label for="service">I'm interested in *</label>
-							<select id="service" name="service" required>
+							<select id="service" name="service" required aria-required="true">
 								<option value="">Select a service...</option>
 								<option value="agentic">Agentic AI Systems</option>
 								<option value="llm">LLM Integration & Fine-tuning</option>
 								<option value="analytics">Text Analytics & Mining</option>
-								<option value="nlp">Custom NLP Solutions</option>
+								<option value="custom-ai">Custom AI Solutions</option>
 								<option value="research">Research & Development</option>
-								<option value="consulting">Consulting & Strategy</option>
+								<option value="consulting">AI Strategy & Consulting</option>
 								<option value="other">Other / General Inquiry</option>
 							</select>
+							<span class="form-error" id="service-error">Please select a service</span>
 						</div>
 
 						<div class="form-group">
 							<label for="message">Project Details *</label>
-							<textarea id="message" name="message" required placeholder="Tell me about your project, timeline, and budget (if applicable)..."></textarea>
+							<textarea id="message" name="message" required aria-required="true" minlength="10" maxlength="1000" placeholder="Tell me about your project, timeline, and budget (if applicable)..."></textarea>
+							<span class="form-error" id="message-error">Please provide project details (at least 10 characters)</span>
 						</div>
 
-						<button type="submit" class="btn-submit">Send Message</button>
-						<div id="result"></div>
+						<button type="submit" class="btn-submit">
+							<span id="submit-text">Send Message</span>
+						</button>
+						<div id="result" role="alert" aria-live="polite"></div>
 					</form>
 				</div>
 			</div>
@@ -1187,116 +522,10 @@
 		</div>
 	</footer>
 
-	<!-- Contact Form Script -->
+	<!-- External JavaScript -->
 	<script src="https://web3forms.com/client/script.js" async defer></script>
-	<script>
-		const form = document.getElementById('contactForm');
-		const result = document.getElementById('result');
-
-		form.addEventListener('submit', function (e) {
-			e.preventDefault();
-			const formData = new FormData(form);
-			const object = Object.fromEntries(formData);
-			const json = JSON.stringify(object);
-			result.innerHTML = "Sending..."
-			result.style.background = '#f3f4f6';
-			result.style.color = '#374151';
-			result.style.display = 'block';
-
-			fetch('https://api.web3forms.com/submit', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-					'Accept': 'application/json'
-				},
-				body: json
-			})
-			.then(async (response) => {
-				let json = await response.json();
-				if (response.status == 200) {
-					result.innerHTML = "✓ Message sent successfully! I'll get back to you soon.";
-					result.style.background = '#d1fae5';
-					result.style.color = '#065f46';
-				} else {
-					console.log(response);
-					result.innerHTML = json.message;
-					result.style.background = '#fee2e2';
-					result.style.color = '#991b1b';
-				}
-			})
-			.catch(error => {
-				console.log(error);
-				result.innerHTML = "Something went wrong. Please try again.";
-				result.style.background = '#fee2e2';
-				result.style.color = '#991b1b';
-			})
-			.then(function () {
-				form.reset();
-				setTimeout(() => {
-					result.style.display = "none";
-				}, 5000);
-			});
-		});
-
-		// Smooth scroll for anchor links
-		document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-			anchor.addEventListener('click', function (e) {
-				e.preventDefault();
-				const target = document.querySelector(this.getAttribute('href'));
-				if (target) {
-					target.scrollIntoView({
-						behavior: 'smooth',
-						block: 'start'
-					});
-				}
-			});
-		});
-
-		// Testimonial Carousel
-		let currentSlideIndex = 1;
-		showSlide(currentSlideIndex);
-
-		// Auto-advance carousel every 8 seconds
-		setInterval(() => {
-			changeSlide(1);
-		}, 8000);
-
-		function changeSlide(n) {
-			showSlide(currentSlideIndex += n);
-		}
-
-		function currentSlide(n) {
-			showSlide(currentSlideIndex = n);
-		}
-
-		function showSlide(n) {
-			let slides = document.getElementsByClassName("testimonial-slide");
-			let dots = document.getElementsByClassName("dot");
-
-			if (n > slides.length) { currentSlideIndex = 1 }
-			if (n < 1) { currentSlideIndex = slides.length }
-
-			for (let i = 0; i < slides.length; i++) {
-				slides[i].classList.remove("active");
-			}
-
-			for (let i = 0; i < dots.length; i++) {
-				dots[i].classList.remove("active");
-			}
-
-			slides[currentSlideIndex - 1].classList.add("active");
-			dots[currentSlideIndex - 1].classList.add("active");
-		}
-	</script>
-
-	<!-- Chatbot Integration -->
-	<script type="module">
-		import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
-		Chatbot.init({
-			chatflowid: "7661d951-f040-45b1-8485-2df753b7e2d9",
-			apiHost: "https://flowise-test-xgrp.onrender.com",
-		})
-	</script>
+	<script src="js/config.js"></script>
+	<script src="js/main.js"></script>
 </body>
 
 </html>
