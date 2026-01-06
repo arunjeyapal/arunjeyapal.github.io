@@ -5,7 +5,7 @@ const siteConfig = {
 		name: "Dr. Arun Jayapal",
 		title: "AI Everywhere: Agentic AI & LLM Expert",
 		description: "Transforming business challenges into AI solutions with 10+ years of expertise in Agentic Systems, LLMs, and Natural Language Processing. PhD from Trinity College Dublin.",
-		image: "images/arun1.jpg",
+		image: "images/arun1.webp",
 		email: "contact@arunjayapal.com",
 		linkedin: "https://www.linkedin.com/in/arunjeyapal/",
 		calendly: "https://calendly.com/jayapal-arunkumar",

@@ -9,22 +9,17 @@
 
 ## 🟡 Medium Priority
 
-### 2. **Performance: Image Optimization**
-**Issue**: Large images slow down the site.
-**Fix**: Compress `images/Arun.jpg` and `images/arun1.jpg` using WebP format.
-**Impact**: Faster load times, especially on mobile.
-
-## 🟢 Low Priority (Nice to Have)
-
-### 3. **Analytics**
+### 2. **Analytics**
 **Feature**: Add privacy-focused analytics (e.g., Plausible or Umami).
 **Impact**: Understand visitor traffic without compromising privacy.
 
-### 4. **Error Handling & Resilience**
+## 🟢 Low Priority (Nice to Have)
+
+### 3. **Error Handling & Resilience**
 **Issue**: Minimal handling for network failures.
 **Fix**: Add more robust try/catch blocks and user-friendly offline notices.
 
-### 5. **Social Proof: Professional Badges**
+### 4. **Social Proof: Professional Badges**
 **Add**:
 - LinkedIn "View Profile" badge
 - Google Scholar link for researchers
@@ -42,9 +37,11 @@
 - **Dark Mode**: Full implementation with system preference detection and persistence.
 - **Print Stylesheet**: Optimized layout for CV/Resume printing.
 - **Scroll Animations**: Added fade-in and slide-up animations for better engagement.
+- **WebP Images**: Converted main images to WebP for faster loading.
+- **Custom 404 Page**: Added a branded error page.
 - **Contact Email**: Updated to professional `contact@arunjayapal.com`.
 
 ## 🎯 Recommended Next Steps
 
 1. **Enable Domain Whitelisting**: Log into Web3Forms and restrict your API key to `arunjayapal.github.io`.
-2. **Compress Hero Images**: The JPGs can be reduced in size further without quality loss.
+2. **PWA Support**: Add a Service Worker for offline access.
