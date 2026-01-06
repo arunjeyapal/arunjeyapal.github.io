@@ -26,12 +26,6 @@
 	--shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
 
-/* Invert GitHub Chart in Dark Mode */
-[data-theme="dark"] .github-chart-container img {
-	filter: invert(1) hue-rotate(180deg);
-	opacity: 0.8;
-}
-
 /* Reset and Base Styles */
 * {
 	margin: 0;
