@@ -6,7 +6,7 @@ const siteConfig = {
 		title: "AI Everywhere: Agentic AI & LLM Expert",
 		description: "Transforming business challenges into AI solutions with 10+ years of expertise in Agentic Systems, LLMs, and Natural Language Processing. PhD from Trinity College Dublin.",
 		image: "images/arun1.jpg",
-		email: "jayapala@tcd.ie",
+		email: "contact@arunjayapal.com",
 		linkedin: "https://www.linkedin.com/in/arunjeyapal/",
 		calendly: "https://calendly.com/jayapal-arunkumar",
 		cv: "docs/resume_cv.pdf",
@@ -217,7 +217,7 @@ const siteConfig = {
 	// Footer Links
 	footerLinks: [
 		{ text: "LinkedIn", url: "https://www.linkedin.com/in/arunjeyapal/" },
-		{ text: "Email", url: "mailto:jayapala@tcd.ie" },
+		{ text: "Email", url: "mailto:contact@arunjayapal.com" },
 		{ text: "Resume", url: "docs/resume_cv.pdf" },
 		{ text: "LDA Tutorial", url: "docs/LDA.pdf" }
 	]

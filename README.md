@@ -157,8 +157,7 @@ The site is static and can be deployed to:
 
 © 2024 Arun Jayapal. All rights reserved.
 
-## 🤝 Support
-
-For issues or questions, please contact:
-- Email: jayapala@tcd.ie
-- LinkedIn: [linkedin.com/in/arunjeyapal](https://www.linkedin.com/in/arunjeyapal/)
+## Contact
+For questions about this refactoring:
+- Email: contact@arunjayapal.com
+- The site is ready to deploy!

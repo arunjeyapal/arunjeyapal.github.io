@@ -137,5 +137,5 @@ The website has been successfully refactored from a single monolithic HTML file 
 
 ## Contact
 For questions about this refactoring:
-- Email: jayapala@tcd.ie
+- Email: contact@arunjayapal.com
 - The site is ready to deploy!

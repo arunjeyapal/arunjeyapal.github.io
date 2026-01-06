@@ -12,6 +12,26 @@
 	--shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
+/* Dark Theme Variables */
+[data-theme="dark"] {
+	--primary-color: #60a5fa;
+	--primary-dark: #3b82f6;
+	--secondary-color: #34d399;
+	--text-dark: #f3f4f6;
+	--text-light: #d1d5db;
+	--bg-light: #111827;
+	--border-color: #374151;
+	--white: #1f2937;
+	--shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+	--shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Invert GitHub Chart in Dark Mode */
+[data-theme="dark"] .github-chart-container img {
+	filter: invert(1) hue-rotate(180deg);
+	opacity: 0.8;
+}
+
 /* Reset and Base Styles */
 * {
 	margin: 0;
@@ -77,6 +97,35 @@ nav {
 
 .nav-links a:hover {
 	color: var(--primary-color);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+	background: none;
+	border: 2px solid var(--border-color);
+	color: var(--text-dark);
+	cursor: pointer;
+	padding: 0.5rem;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.3s;
+	margin-left: 1rem;
+	width: 40px;
+	height: 40px;
+}
+
+.theme-toggle:hover {
+	background: var(--bg-light);
+	color: var(--primary-color);
+	border-color: var(--primary-color);
+}
+
+.theme-toggle svg {
+	width: 20px;
+	height: 20px;
+	fill: currentColor;
 }
 
 /* Hero Section */
@@ -875,4 +924,163 @@ select:focus {
 
 @keyframes spin {
 	to { transform: rotate(360deg); }
+}
+
+/* Print Styles */
+@media print {
+	header,
+	.hero-content .cta-buttons,
+	.mobile-menu-toggle,
+	.skip-to-content,
+	#contact,
+	.testimonials-carousel,
+	.carousel-btn,
+	.carousel-dots,
+	.theme-toggle,
+	footer {
+		display: none !important;
+	}
+
+	body {
+		background: white;
+		color: black;
+		font-size: 12pt;
+	}
+
+	.container {
+		width: 100%;
+		max-width: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.hero {
+		background: none;
+		color: black;
+		padding: 2rem 0;
+		text-align: left;
+	}
+
+	.hero-content {
+		max-width: none;
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+	}
+
+	.hero-image {
+		border: none;
+		margin-bottom: 0;
+		width: 100px;
+		height: 100px;
+	}
+
+	.hero h1 {
+		color: black;
+		font-size: 24pt;
+		margin-bottom: 0.5rem;
+	}
+
+	.hero-subtitle {
+		color: black;
+		font-size: 14pt;
+		text-shadow: none;
+	}
+
+	.hero-description {
+		color: #333;
+		font-size: 11pt;
+	}
+
+	section {
+		padding: 1rem 0;
+		page-break-inside: avoid;
+	}
+
+	.section-title {
+		text-align: left;
+		font-size: 18pt;
+		border-bottom: 2px solid #eee;
+		padding-bottom: 0.5rem;
+		margin-bottom: 1rem;
+	}
+
+	.section-subtitle {
+		display: none;
+	}
+
+	.stats-grid {
+		grid-template-columns: repeat(4, 1fr);
+		gap: 1rem;
+		margin-bottom: 2rem;
+	}
+
+	.stat-item h3 {
+		font-size: 1.5rem;
+	}
+
+	.about-content {
+		display: block;
+	}
+
+	.about-text {
+		margin-bottom: 1rem;
+	}
+
+	.services-grid {
+		display: block;
+	}
+
+	.service-card {
+		break-inside: avoid;
+		page-break-inside: avoid;
+		border: none;
+		box-shadow: none;
+		padding: 0;
+		margin-bottom: 1.5rem;
+	}
+
+	.service-card h3 {
+		color: black;
+		font-size: 14pt;
+		margin-bottom: 0.25rem;
+	}
+
+	.service-icon {
+		display: none;
+	}
+
+	.publications-list {
+		max-width: none;
+	}
+
+	.publication-item {
+		border: none;
+		box-shadow: none;
+		padding: 0;
+		margin-bottom: 1rem;
+		border-left: none;
+	}
+
+	.publication-item h3 {
+		color: black;
+		font-size: 12pt;
+	}
+
+	.publication-item a {
+		color: black;
+		text-decoration: none;
+	}
+
+	/* Show URLs for publications */
+	.publication-item h3 a:after {
+		content: " (" attr(href) ")";
+		font-size: 9pt;
+		color: #666;
+		font-weight: normal;
+	}
+
+	.btn {
+		display: none;
+	}
 }

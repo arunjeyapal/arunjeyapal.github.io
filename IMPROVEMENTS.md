@@ -82,6 +82,10 @@
 - **Mobile Navigation**: Hamburger menu implemented.
 - **Loading States**: Spinner and loading states added for form.
 - **SEO Enhancements**: Added structured data, sitemap, robots.txt, canonical URL.
+- **Dark Mode**: Implemented toggle with persistence.
+- **Print Stylesheet**: Added print-specific CSS.
+- **Social Proof**: Added GitHub contributions graph.
+- **Contact Email**: Updated to contact@arunjayapal.com.
 
 ## 📊 Summary by Category
 
