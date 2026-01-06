@@ -41,6 +41,7 @@
 - **SEO Enhancements**: Added structured data, sitemap, robots.txt, canonical URL.
 - **Dark Mode**: Full implementation with system preference detection and persistence.
 - **Print Stylesheet**: Optimized layout for CV/Resume printing.
+- **Scroll Animations**: Added fade-in and slide-up animations for better engagement.
 - **Contact Email**: Updated to professional `contact@arunjayapal.com`.
 
 ## 🎯 Recommended Next Steps

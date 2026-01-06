@@ -317,6 +317,26 @@ function initTheme() {
 	});
 }
 
+// Scroll Animations
+function initScrollAnimations() {
+	const observerOptions = {
+		threshold: 0.1,
+		rootMargin: "0px 0px -50px 0px"
+	};
+
+	const observer = new IntersectionObserver((entries) => {
+		entries.forEach(entry => {
+			if (entry.isIntersecting) {
+				entry.target.classList.add('is-visible');
+				observer.unobserve(entry.target); // Only animate once
+			}
+		});
+	}, observerOptions);
+
+	const animatedElements = document.querySelectorAll('.animate-on-scroll');
+	animatedElements.forEach(el => observer.observe(el));
+}
+
 // Initialize all functionality when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
 	initContactForm();
@@ -324,4 +344,5 @@ document.addEventListener('DOMContentLoaded', function() {
 	initCarousel();
 	initMobileMenu();
 	initTheme();
+	initScrollAnimations();
 });
