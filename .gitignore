@@ -1,0 +1,6 @@
+openai-apikey
+.gemini/
+.DS_Store
+node_modules/
+dist/
+*.log
