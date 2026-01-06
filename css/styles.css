@@ -80,6 +80,7 @@ nav {
 	list-style: none;
 	gap: 2rem;
 	flex-wrap: wrap;
+	align-items: center;
 }
 
 .nav-links a {
@@ -105,7 +106,6 @@ nav {
 	align-items: center;
 	justify-content: center;
 	transition: all 0.3s;
-	margin-left: 1rem;
 	width: 40px;
 	height: 40px;
 }
