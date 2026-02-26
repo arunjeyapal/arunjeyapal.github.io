@@ -2,17 +2,28 @@
 
 User-agent: *
 Allow: /
-
-# Sitemap location
-Sitemap: https://arunjeyapal.github.io/sitemap.xml
-
-# Disallow crawling of test files
 Disallow: /test*.html
 Disallow: /*.py
 
-# Allow all resources
-Allow: /css/
-Allow: /js/
-Allow: /images/
-Allow: /docs/
-Allow: /Papers/
+# AI crawlers — explicitly welcome
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: GoogleExtended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+# Sitemap and LLM index
+Sitemap: https://arunjeyapal.github.io/sitemap.xml
+LLMs: https://arunjeyapal.github.io/llms.txt

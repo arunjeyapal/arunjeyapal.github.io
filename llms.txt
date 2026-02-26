@@ -1,0 +1,47 @@
+# Dr. Arun Jayapal
+
+> Independent AI Consultant & Researcher. PhD from Trinity College Dublin. I automate complex processes with agentic AI and build production AI systems for global clients.
+
+Dr. Arun Jayapal is an independent AI consultant with 10+ years of industry experience spanning academic research and enterprise delivery. He holds a PhD in Computational Linguistics from Trinity College Dublin (thesis: *Finding Diachronic Sense Changes by Unsupervised Methods*) and previously led AI delivery at EY, architecting solutions for international clients. He serves as a peer reviewer for CoLing and EACL conferences and has 8+ published research papers in AI/ML venues.
+
+## Services
+
+- [I Automate Processes](https://arunjeyapal.github.io/#services): Design of agentic pipelines, LLM workflows, multi-agent architectures, and text analytics systems that eliminate manual bottlenecks.
+- [I Build AI Products](https://arunjeyapal.github.io/#services): End-to-end architecture and delivery of custom AI systems — from early MVP to enterprise-scale production platforms.
+
+## Expertise
+
+Agentic AI Systems, Multi-Agent Architectures, LLM Integration, Retrieval-Augmented Generation (RAG), Model Fine-Tuning, Intelligent Document Processing, Sentiment Analysis, Text Mining, Natural Language Processing, Computational Linguistics, AI Strategy & Governance, Production AI Pipeline Architecture.
+
+## Technology Stack
+
+Python, PyTorch, scikit-learn, Transformers, LangChain, LangGraph, CrewAI, AutoGPT, FastAPI, PostgreSQL, ClickHouse, Celery, Airflow, Docker.
+
+## Selected Work
+
+- [Agentic Ideation Sandbox](https://arunjeyapal.github.io/#case-studies): Full-stack collaborative platform where teams assemble AI personas and run multi-agent strategic simulations in real time. Stack: FastAPI, React, Celery, Redis, Gemini.
+- [DataFlow — Conversational Data Science Agent](https://arunjeyapal.github.io/#case-studies): Agentic assistant that interprets natural language, plans multi-step transformations, and executes statistical analyses on structured data. Stack: FastAPI, React, Gemini, PostgreSQL.
+- [Agentic PDF Translation Service](https://arunjeyapal.github.io/#case-studies): Agentic pipeline for document translation with cross-page context management, back-translation quality verification, and automatic retry. Stack: FastAPI, Gemini, Sentence Transformers.
+- [Agentic Video Localisation Pipeline](https://arunjeyapal.github.io/#case-studies): Multi-stage pipeline that fetches captions, orchestrates translation, triggers voice-cloned speech synthesis, and hands off to a video generation agent. Stack: Flask, Gemini, F5-TTS, Dia-1.6B.
+- [Video Intelligence API](https://arunjeyapal.github.io/#case-studies): FastAPI service processing videos through Gemini Vision to extract insights and generate structured reports. Stack: FastAPI, Gemini Vision, Docker.
+- [Event Ticketing & Live Check-in System](https://arunjeyapal.github.io/#case-studies): Production event management platform with QR ticket generation, encrypted PII, and camera-based live check-in. Stack: FastAPI, PostgreSQL, SQLAlchemy.
+
+## Publications
+
+- [Dynamic Generative model for Diachronic Sense Emergence Detection](https://arunjeyapal.github.io/Papers/PP6.pdf) — COLING 2016, Osaka
+- [An unsupervised EM method to infer time variation in sense probabilities](https://arunjeyapal.github.io/Papers/PP7.pdf) — ICON 2015, Trivandrum
+- [Detecting change and emergence for multiword expressions](https://arunjeyapal.github.io/Papers/PP5.pdf) — MWE Workshop, EACL 2014
+- [TCDSCSS: Dimensionality Reduction to Evaluate Texts of Varying Lengths](https://arunjeyapal.github.io/Papers/PP8.pdf) — SemEval 2014, COLING Dublin
+- [Author Verification: Basic Stacked Generalization Applied To Predictions from a Set of Heterogeneous Learners](https://arunjeyapal.github.io/Papers/PP2.pdf) — PAN, CLEF 2015
+
+## Current Clients
+
+Adfluence Hub (AI-powered marketing intelligence), Chainscript Labs (autonomous agents for blockchain/Web3), DataExos (text mining and analytics), Sakinx (intelligent document processing).
+
+## Contact
+
+- Email: contact@arunjayapal.com
+- LinkedIn: https://www.linkedin.com/in/arunjeyapal/
+- Book a call: https://calendly.com/jayapal-arunkumar
+- CV: https://arunjeyapal.github.io/docs/resume_cv.pdf
+- PhD Thesis: https://arunjeyapal.github.io/docs/thesis.pdf
