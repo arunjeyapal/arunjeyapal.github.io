@@ -14,13 +14,13 @@
 	<meta property="og:url" content="https://arunjeyapal.github.io/">
 	<meta property="og:title" content="Arun Jayapal - AI Everywhere: Agentic AI & LLM Expert">
 	<meta property="og:description" content="AI everywhere - PhD from Trinity College Dublin. Specializing in agentic AI, LLM integration, and transformative AI/ML solutions.">
-	<meta property="og:image" content="https://arunjeyapal.github.io/images/arun1.webp">
+	<meta property="og:image" content="https://arunjeyapal.github.io/images/ArunPhoto.png">
 
 	<!-- Twitter Card -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="Arun Jayapal - AI Everywhere: Agentic AI & LLM Expert">
 	<meta name="twitter:description" content="AI everywhere - PhD from Trinity College Dublin specializing in agentic AI and LLM solutions">
-	<meta name="twitter:image" content="https://arunjeyapal.github.io/images/arun1.webp">
+	<meta name="twitter:image" content="https://arunjeyapal.github.io/images/ArunPhoto.png">
 
 	<title>Arun Jayapal - AI Everywhere: Agentic AI & LLM Expert</title>
 
@@ -31,6 +31,11 @@
 	<!-- Preconnect for performance -->
 	<link rel="preconnect" href="https://web3forms.com">
 	<link rel="preconnect" href="https://ui-avatars.com">
+
+	<!-- Inter Font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 	<!-- External CSS -->
 	<link rel="stylesheet" href="css/styles.css">
@@ -71,13 +76,21 @@
 	<!-- Header & Navigation -->
 	<header role="banner">
 		<nav class="container" role="navigation" aria-label="Main navigation">
-			<a href="#" class="logo" aria-label="Arun Jayapal - Home">Arun Jayapal</a>
+			<a href="#" class="logo" aria-label="Arun Jayapal - Home">
+				<svg class="logo-icon" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+					<rect width="30" height="30" rx="7" fill="#EEF2FF"/>
+					<text x="15" y="19" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#1d4ed8" letter-spacing="-0.5">AJ</text>
+					<path d="M7 23 C9.5 21.2 11.5 24.2 15 22.5 C18.5 20.8 20.5 23.8 23 22" stroke="#2563eb" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+				</svg>
+				Arun Jayapal
+			</a>
 			<button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
 				☰
 			</button>
 			<ul class="nav-links">
 				<li><a href="#about">About</a></li>
 				<li><a href="#services">Services</a></li>
+				<li><a href="#case-studies">Work</a></li>
 				<li><a href="#publications">Publications</a></li>
 				<li><a href="#contact">Contact</a></li>
 				<li>
@@ -91,17 +104,36 @@
 
 	<!-- Hero Section -->
 	<section class="hero" id="main-content">
-		<div class="hero-content animate-on-scroll">
-			<img src="images/arun1.webp" alt="Dr. Arun Jayapal - AI Consultant and Researcher" class="hero-image" loading="eager">
-			<h1>Dr. Arun Jayapal</h1>
-			<p class="hero-subtitle">Architecting Scalable, Governed AI Systems</p>
-			<p class="hero-description">
-				Transforming business challenges into AI solutions with 10+ years of expertise in Agentic Systems, LLMs, and Natural Language Processing.
-				PhD from Trinity College Dublin.
-			</p>
-			<div class="cta-buttons">
-				<a href="#contact" class="btn btn-primary">Get In Touch</a>
-				<a href="#services" class="btn btn-secondary">View Services</a>
+		<div class="container">
+			<div class="hero-grid">
+				<!-- Left: Text -->
+				<div class="hero-text animate-on-scroll">
+					<span class="hero-eyebrow">AI Consultant · Researcher · Builder</span>
+					<h1>Architecting<br>Scalable, Governed<br>AI Systems.</h1>
+					<p class="hero-description">
+						PhD from Trinity College Dublin. 10+ years turning complex AI
+						research into production systems for global clients.
+					</p>
+					<div class="cta-buttons">
+						<a href="#contact" class="btn btn-primary">Get In Touch</a>
+						<a href="#services" class="btn btn-secondary">View Services</a>
+					</div>
+				</div>
+
+				<!-- Right: Photo + Badges -->
+				<div class="hero-visual animate-on-scroll stagger-2">
+					<div class="hero-image-wrap">
+						<img src="images/ArunPhoto.png" alt="Dr. Arun Jayapal" class="hero-image" loading="eager">
+					</div>
+					<div class="hero-badges">
+						<div class="badge">PhD · Trinity College Dublin</div>
+						<div class="badge">10+ Years Industry Experience</div>
+						<div class="badge">8+ Research Publications</div>
+						<div class="badge">Independent Consultant</div>
+						<div class="badge">Conference Reviewer · CoLing · EACL</div>
+						<div class="badge">Sustainable Living</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -192,80 +224,146 @@
 	<!-- Services Section -->
 	<section id="services" class="bg-section">
 		<div class="container">
-			<h2 class="section-title animate-on-scroll">Strategic Capabilities</h2>
-			<p class="section-subtitle animate-on-scroll">AI everywhere - Tailored solutions for your unique challenges</p>
+			<h2 class="section-title animate-on-scroll">How I Work</h2>
+			<p class="section-subtitle animate-on-scroll">Two ways to engage</p>
 
-			<div class="services-grid">
-				<div class="service-card animate-on-scroll stagger-1">
-					<div class="service-icon">🤖</div>
-					<h3>Agentic Workflow Design</h3>
-					<p>Build intelligent, autonomous agents that can reason, plan, and execute complex tasks with minimal human intervention.</p>
-					<ul>
-						<li>Multi-agent architectures</li>
-						<li>Autonomous workflow automation</li>
-						<li>Tool-using AI agents</li>
-						<li>Agent orchestration & coordination</li>
+			<div class="services-split">
+				<div class="service-pillar animate-on-scroll stagger-1">
+					<span class="service-pillar-number">01</span>
+					<h3>I Automate Processes</h3>
+					<p class="service-pillar-desc">Your bottleneck is time, labour, or human error. I design agentic pipelines, LLM workflows, and text analytics systems that run without you.</p>
+					<ul class="service-pillar-list">
+						<li>Agentic workflow & multi-agent design</li>
+						<li>LLM integration, RAG & fine-tuning</li>
+						<li>Intelligent document processing</li>
+						<li>Sentiment analysis & text mining at scale</li>
 					</ul>
+					<a href="#contact" class="btn btn-primary service-pillar-cta">Start a Project</a>
 				</div>
 
-				<div class="service-card animate-on-scroll stagger-2">
-					<div class="service-icon">💬</div>
-					<h3>LLM Integration & Optimization</h3>
-					<p>Leverage Large Language Models with custom fine-tuning, RAG, and agentic capabilities for your specific use cases.</p>
-					<ul>
-						<li>Prompt engineering & optimization</li>
-						<li>Model fine-tuning & distillation</li>
-						<li>RAG implementation</li>
-						<li>LLM-powered agents</li>
+				<div class="service-divider"></div>
+
+				<div class="service-pillar animate-on-scroll stagger-2">
+					<span class="service-pillar-number">02</span>
+					<h3>I Build AI Products</h3>
+					<p class="service-pillar-desc">You have an idea but no clear path to production. I architect and ship custom AI systems — from early MVP to enterprise scale.</p>
+					<ul class="service-pillar-list">
+						<li>End-to-end AI system architecture</li>
+						<li>Applied research & algorithm development</li>
+						<li>AI strategy, feasibility & governance</li>
+						<li>Team enablement & technical leadership</li>
 					</ul>
+					<a href="#contact" class="btn btn-primary service-pillar-cta">Start a Project</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Case Studies -->
+	<section id="case-studies" class="bg-section">
+		<div class="container">
+			<h2 class="section-title animate-on-scroll">Selected Work</h2>
+			<p class="section-subtitle animate-on-scroll">Production systems built for real clients</p>
+
+			<div class="case-studies-grid">
+				<!-- Card 1 -->
+				<div class="case-study-card animate-on-scroll stagger-1">
+					<h3>Agentic Ideation Sandbox</h3>
+					<p>A full-stack collaborative workspace where teams assemble AI personas, run multi-agent strategic simulations, and brainstorm in real time. WebSocket-driven live updates throughout.</p>
+					<div class="case-study-tags">
+						<span class="tag">FastAPI</span>
+						<span class="tag">React</span>
+						<span class="tag">Celery</span>
+						<span class="tag">Redis</span>
+						<span class="tag">Gemini</span>
+					</div>
+					<div class="case-study-outcome">
+						<span class="outcome-dot"></span>
+						Multi-agent simulations with streamed real-time results
+					</div>
 				</div>
 
-				<div class="service-card animate-on-scroll stagger-3">
-					<div class="service-icon">📊</div>
-					<h3>Intelligent Text Analytics</h3>
-					<p>Extract actionable insights from unstructured text data through sentiment analysis, trend detection, and pattern discovery.</p>
-					<ul>
-						<li>Customer feedback analysis</li>
-						<li>Social media monitoring</li>
-						<li>Review & survey insights</li>
-						<li>Opinion mining at scale</li>
-					</ul>
+				<!-- Card 2 -->
+				<div class="case-study-card animate-on-scroll stagger-2">
+					<h3>DataFlow — Conversational Data Science Agent</h3>
+					<p>An agentic data science assistant that interprets natural language instructions, autonomously plans multi-step transformations, and executes statistical analyses on structured data — no code, no formulas.</p>
+					<div class="case-study-tags">
+						<span class="tag">FastAPI</span>
+						<span class="tag">React</span>
+						<span class="tag">Gemini</span>
+						<span class="tag">PostgreSQL</span>
+						<span class="tag">AG-Grid</span>
+					</div>
+					<div class="case-study-outcome">
+						<span class="outcome-dot"></span>
+						End-to-end data science workflows driven by plain English intent
+					</div>
 				</div>
 
-				<div class="service-card animate-on-scroll stagger-1">
-					<div class="service-icon">⚙️</div>
-					<h3>Enterprise AI Architecture</h3>
-					<p>End-to-end development of bespoke AI systems tailored to your business needs and domain-specific challenges.</p>
-					<ul>
-						<li>Text classification systems</li>
-						<li>Entity extraction pipelines</li>
-						<li>Document processing automation</li>
-						<li>Intelligent data pipelines</li>
-					</ul>
+				<!-- Card 3 -->
+				<div class="case-study-card animate-on-scroll stagger-3">
+					<h3>Video Intelligence API</h3>
+					<p>A FastAPI service that processes uploaded videos through Gemini's multimodal capabilities to extract key moments, insights, and generate structured analytical reports at scale.</p>
+					<div class="case-study-tags">
+						<span class="tag">FastAPI</span>
+						<span class="tag">Gemini Vision</span>
+						<span class="tag">Python</span>
+						<span class="tag">Docker</span>
+					</div>
+					<div class="case-study-outcome">
+						<span class="outcome-dot"></span>
+						Structured video reports generated automatically from raw footage
+					</div>
 				</div>
 
-				<div class="service-card animate-on-scroll stagger-2">
-					<div class="service-icon">🔬</div>
-					<h3>Applied AI Research</h3>
-					<p>Explore novel approaches and push the boundaries of what's possible with cutting-edge AI technology.</p>
-					<ul>
-						<li>Algorithm development</li>
-						<li>Proof-of-concept projects</li>
-						<li>Academic collaborations</li>
-						<li>Innovation consulting</li>
-					</ul>
+				<!-- Card 4 -->
+				<div class="case-study-card animate-on-scroll stagger-1">
+					<h3>Agentic PDF Translation Service</h3>
+					<p>An agentic pipeline that translates PDF documents page-by-page with cross-page context management, back-translation quality checks, and automatic retry for pages below confidence thresholds.</p>
+					<div class="case-study-tags">
+						<span class="tag">FastAPI</span>
+						<span class="tag">Gemini</span>
+						<span class="tag">Sentence Transformers</span>
+						<span class="tag">python-docx</span>
+					</div>
+					<div class="case-study-outcome">
+						<span class="outcome-dot"></span>
+						Self-healing translation pipeline with composite quality scoring
+					</div>
 				</div>
 
-				<div class="service-card animate-on-scroll stagger-3">
-					<div class="service-icon">🎯</div>
-					<h3>AI Strategy & Governance</h3>
-					<p>Strategic guidance on AI/ML adoption, architecture design, and roadmap development for successful implementation.</p>
-					<ul>
-						<li>Technical feasibility assessment</li>
-						<li>Architecture design & review</li>
-						<li>Team training & mentoring</li>
-						<li>Technology stack selection</li>
-					</ul>
+				<!-- Card 5 -->
+				<div class="case-study-card animate-on-scroll stagger-2">
+					<h3>Agentic Video Localisation Pipeline</h3>
+					<p>A multi-stage agentic pipeline that autonomously fetches captions, orchestrates translation and quality refinement via Gemini, triggers voice-cloned speech synthesis, and hands off to a video generation agent — with a human-in-the-loop review gate between stages.</p>
+					<div class="case-study-tags">
+						<span class="tag">Flask</span>
+						<span class="tag">Gemini</span>
+						<span class="tag">F5-TTS</span>
+						<span class="tag">Dia-1.6B</span>
+						<span class="tag">FFmpeg</span>
+					</div>
+					<div class="case-study-outcome">
+						<span class="outcome-dot"></span>
+						Autonomous end-to-end localisation from video URL to dubbed output
+					</div>
+				</div>
+
+				<!-- Card 6 -->
+				<div class="case-study-card animate-on-scroll stagger-3">
+					<h3>Event Ticketing & Live Check-in System</h3>
+					<p>A production-ready event platform with digital QR ticket generation, encrypted attendee data, camera-based live check-in, and a secure admin dashboard for event organizers.</p>
+					<div class="case-study-tags">
+						<span class="tag">FastAPI</span>
+						<span class="tag">PostgreSQL</span>
+						<span class="tag">JWT</span>
+						<span class="tag">QR Codes</span>
+						<span class="tag">SQLAlchemy</span>
+					</div>
+					<div class="case-study-outcome">
+						<span class="outcome-dot"></span>
+						Live check-in desk with camera QR scanning and encrypted PII storage
+					</div>
 				</div>
 			</div>
 		</div>
@@ -408,7 +506,9 @@
 					<h3>Get In Touch</h3>
 
 					<div class="contact-method">
-						<div class="contact-icon">📧</div>
+						<div class="contact-icon">
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" /></svg>
+						</div>
 						<div class="contact-details">
 							<h4>Email</h4>
 							<p>Best for detailed project inquiries</p>
@@ -417,7 +517,9 @@
 					</div>
 
 					<div class="contact-method">
-						<div class="contact-icon">💼</div>
+						<div class="contact-icon">
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 0 0 .75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 0 0-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0 1 12 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 0 1-.673-.38m0 0A2.18 2.18 0 0 1 3 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 0 1 3.413-.387m7.5 0V5.25A2.25 2.25 0 0 0 13.5 3h-3a2.25 2.25 0 0 0-2.25 2.25v.894m7.5 0a48.667 48.667 0 0 0-7.5 0M12 12.75h.008v.008H12v-.008Z" /></svg>
+						</div>
 						<div class="contact-details">
 							<h4>LinkedIn</h4>
 							<p>Connect professionally</p>
@@ -426,7 +528,9 @@
 					</div>
 
 					<div class="contact-method">
-						<div class="contact-icon">📅</div>
+						<div class="contact-icon">
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 9v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H18v-.008Zm0 2.25h.008v.008H18V15Z" /></svg>
+						</div>
 						<div class="contact-details">
 							<h4>Schedule a Call</h4>
 							<p>Book a free 30-minute consultation</p>
@@ -435,7 +539,9 @@
 					</div>
 
 					<div class="contact-method">
-						<div class="contact-icon">📄</div>
+						<div class="contact-icon">
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" /></svg>
+						</div>
 						<div class="contact-details">
 							<h4>Resume & Portfolio</h4>
 							<p>View my complete background</p>

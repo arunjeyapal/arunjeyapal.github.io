@@ -337,6 +337,23 @@ function initScrollAnimations() {
 	animatedElements.forEach(el => observer.observe(el));
 }
 
+// Header scroll effect
+function initHeaderScroll() {
+	const header = document.querySelector('header');
+	if (!header) return;
+
+	const onScroll = () => {
+		if (window.scrollY > 80) {
+			header.classList.add('header--scrolled');
+		} else {
+			header.classList.remove('header--scrolled');
+		}
+	};
+
+	window.addEventListener('scroll', onScroll, { passive: true });
+	onScroll(); // run once on load
+}
+
 // Initialize all functionality when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
 	initContactForm();
@@ -345,4 +362,5 @@ document.addEventListener('DOMContentLoaded', function() {
 	initMobileMenu();
 	initTheme();
 	initScrollAnimations();
+	initHeaderScroll();
 });
