@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Case Study: Agentic PDF Translation Service — self-healing translation pipeline with quality scoring and EU regulatory compliance, built for Chainscript Labs.">
+	<title>Agentic PDF Translation — Case Study | Arun Jayapal</title>
+	<link rel="icon" type="image/png" href="../images/favicon.png">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+	<a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+	<header role="banner">
+		<nav class="container" role="navigation" aria-label="Main navigation">
+			<a href="../index.html" class="logo">
+				<svg class="logo-icon" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<rect width="30" height="30" rx="7" fill="#2563eb"/>
+					<text x="15" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#ffffff" letter-spacing="-0.5">AI</text>
+				</svg>
+				Arun Jayapal
+			</a>
+			<button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+			<ul class="nav-links">
+				<li><a href="../index.html">Home</a></li>
+				<li><a href="../index.html#services">Services</a></li>
+				<li><a href="../framework.html">Framework</a></li>
+				<li><a href="../portfolio.html" class="nav-active">Portfolio</a></li>
+				<li><a href="../index.html#contact">Contact</a></li>
+				<li><a href="https://calendly.com/jayapal-arunkumar" target="_blank" class="nav-cta-btn">Consultation</a></li>
+				<li><button class="theme-toggle" aria-label="Toggle dark mode"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button></li>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- Hero -->
+	<div class="cs-hero cs-hero--navy" id="main-content">
+		<div class="container">
+			<div class="cs-hero-meta">
+				<span class="cs-category">Governance</span>
+				<span class="cs-client">Chainscript Labs</span>
+			</div>
+			<h1>A translation pipeline that checks its own work — and fixes it</h1>
+			<p class="cs-hero-sub">A self-healing agentic pipeline that translates large PDF documents with cross-page context awareness, back-translates each page to verify accuracy, and automatically retries any section below a composite quality threshold.</p>
+			<div class="cs-metrics">
+				<div class="cs-metric">
+					<span class="cs-metric-value">Self-healing</span>
+					<span class="cs-metric-label">Automatic quality retry</span>
+				</div>
+				<div class="cs-metric">
+					<span class="cs-metric-value">Composite</span>
+					<span class="cs-metric-label">Multi-signal quality score</span>
+				</div>
+				<div class="cs-metric">
+					<span class="cs-metric-value">Context</span>
+					<span class="cs-metric-label">Cross-page coherence</span>
+				</div>
+				<div class="cs-metric">
+					<span class="cs-metric-value">Auditable</span>
+					<span class="cs-metric-label">Per-page quality log</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Body -->
+	<div class="cs-body">
+		<div class="container">
+			<article class="cs-article animate-on-scroll">
+
+				<section class="cs-section">
+					<h2>The Challenge</h2>
+					<p>Chainscript Labs handles legal and regulatory documents that need accurate, auditable translation across European languages. The standard LLM translation approach — treating each page or paragraph in isolation — produces output that reads fluently in isolation but loses coherence at document scale. Technical terms shift mid-document, defined concepts are translated inconsistently, and regulatory language drifts from the source meaning.</p>
+					<p>The deeper problem: how do you know when a translation is wrong? With standard approaches, you don't — until a human reviewer catches it, often long after the document has been used. The system needed to verify its own output automatically, and fix what it found.</p>
+					<div class="cs-callout">
+						"The self-healing loop was the core innovation. Translating is one thing — knowing whether you've translated correctly, and fixing it when you haven't, is the hard problem."
+					</div>
+				</section>
+
+				<section class="cs-section">
+					<h2>The Solution</h2>
+					<p>The Agentic PDF Translation Service processes documents page by page, but with a rolling context window that carries forward key terminology and defined concepts from earlier pages. Each translated page is immediately back-translated into the source language, and the result is compared against the original using a composite quality score combining semantic similarity (Sentence Transformers), structural equivalence, and terminology consistency.</p>
+					<p>Pages scoring below a configurable threshold are automatically retried with enriched context and alternative prompting strategies. The pipeline checkpoints progress to disk, so long documents can resume from the last successful page if interrupted — no re-processing of already-approved translations.</p>
+				</section>
+
+				<section class="cs-section">
+					<h2>How It Works</h2>
+					<div class="cs-flow">
+						<div class="cs-flow-step">
+							<div class="cs-flow-num">1</div>
+							<div class="cs-flow-content">
+								<strong>Document Parsing</strong>
+								<p>The PDF is parsed and segmented into pages with layout metadata preserved. Tables, headers, footnotes, and body text are identified and tagged — the translation prompt adapts based on content type to preserve structural meaning.</p>
+							</div>
+						</div>
+						<div class="cs-flow-step">
+							<div class="cs-flow-num">2</div>
+							<div class="cs-flow-content">
+								<strong>Terminology Extraction</strong>
+								<p>Before translation begins, Gemini identifies defined terms, proper nouns, and domain-specific vocabulary in the source document. These are compiled into a translation glossary that is injected into every subsequent page translation prompt — enforcing consistency across the full document.</p>
+							</div>
+						</div>
+						<div class="cs-flow-step">
+							<div class="cs-flow-num">3</div>
+							<div class="cs-flow-content">
+								<strong>Context-Aware Translation</strong>
+								<p>Each page is translated with a rolling context window: the translated text from the preceding pages (truncated to fit the context budget) is included in the prompt. This allows the model to maintain narrative continuity, pronoun resolution, and consistent register across page boundaries.</p>
+							</div>
+						</div>
+						<div class="cs-flow-step">
+							<div class="cs-flow-num">4</div>
+							<div class="cs-flow-content">
+								<strong>Back-Translation Verification</strong>
+								<p>The translated page is immediately back-translated into the source language. The back-translation is compared against the original using three signals: semantic similarity via Sentence Transformers embeddings, structural preservation (paragraph count, list items, headers), and glossary term hit rate.</p>
+							</div>
+						</div>
+						<div class="cs-flow-step">
+							<div class="cs-flow-num">5</div>
+							<div class="cs-flow-content">
+								<strong>Quality Gate &amp; Retry</strong>
+								<p>The composite quality score is compared against a configurable threshold. Pages below threshold are flagged and re-translated with an enriched prompt that includes the specific quality failures as feedback — guiding the model toward a corrected output. The retry loop runs up to three times per page.</p>
+							</div>
+						</div>
+						<div class="cs-flow-step">
+							<div class="cs-flow-num">6</div>
+							<div class="cs-flow-content">
+								<strong>Checkpointing &amp; Assembly</strong>
+								<p>Each approved page is written to a checkpoint file keyed by document ID and page number. On completion, all approved pages are assembled into the output PDF. If the pipeline is interrupted at any point, it resumes from the last checkpoint — protecting against wasted compute on long documents.</p>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="cs-section">
+					<h2>Technical Highlights</h2>
+					<div class="cs-highlights">
+						<div class="cs-highlight-card">
+							<h4>Composite Quality Scoring</h4>
+							<p>Quality is measured on three independent axes: semantic similarity (cosine similarity between Sentence Transformer embeddings of original and back-translation), structural preservation (paragraph and element count delta), and terminology consistency (glossary term coverage). The composite score requires all three to pass — a fluent back-translation that drops a defined term still fails the gate.</p>
+						</div>
+						<div class="cs-highlight-card">
+							<h4>Glossary-Constrained Generation</h4>
+							<p>Domain terminology extracted during the initial pass is compiled into a structured glossary and injected as a hard constraint into each translation prompt. The model is instructed to translate listed terms using the exact target-language forms specified — preventing terminology drift across hundreds of pages.</p>
+						</div>
+						<div class="cs-highlight-card">
+							<h4>Fault-Tolerant Checkpointing</h4>
+							<p>Every approved page is immediately checkpointed to disk. If processing fails mid-document — network interruption, rate limit, unexpected error — the pipeline resumes from the last successful checkpoint rather than reprocessing the entire document. For 200-page regulatory documents, this matters.</p>
+						</div>
+						<div class="cs-highlight-card">
+							<h4>Per-Page Audit Log</h4>
+							<p>Every page produces an audit record: original text, translation, back-translation, composite quality score, number of retries, and final approval status. This log is stored in PostgreSQL and accessible via API, providing a complete verifiable record of the translation process — essential for regulatory submission contexts.</p>
+						</div>
+					</div>
+				</section>
+
+				<section class="cs-section">
+					<h2>The Stack</h2>
+					<div class="cs-stack">
+						<span class="cs-chip">FastAPI</span>
+						<span class="cs-chip">Google Gemini</span>
+						<span class="cs-chip">Sentence Transformers</span>
+						<span class="cs-chip">PyMuPDF</span>
+						<span class="cs-chip">PostgreSQL</span>
+						<span class="cs-chip">SQLAlchemy</span>
+						<span class="cs-chip">ReportLab</span>
+						<span class="cs-chip">Redis</span>
+						<span class="cs-chip">Docker</span>
+						<span class="cs-chip">python-jose (JWT)</span>
+					</div>
+				</section>
+
+				<section class="cs-section">
+					<h2>Outcomes</h2>
+					<ul class="cs-outcomes-list">
+						<li><span class="cs-outcome-dot"></span>The self-healing loop catches and corrects translation failures before they reach a human reviewer — reducing post-translation manual correction significantly.</li>
+						<li><span class="cs-outcome-dot"></span>Glossary-constrained generation produces terminology consistency across full documents that was previously achievable only with human terminology management.</li>
+						<li><span class="cs-outcome-dot"></span>The per-page audit log provides the evidentiary trail required for regulatory submissions — a verifiable record that each page met a defined quality standard.</li>
+						<li><span class="cs-outcome-dot"></span>Checkpointing allows large documents (150–300 pages) to be processed reliably across extended time periods without risk of losing progress to transient failures.</li>
+					</ul>
+				</section>
+
+			</article>
+		</div>
+	</div>
+
+	<!-- Case Study Navigation -->
+	<div class="cs-nav">
+		<div class="container">
+			<div class="cs-nav-inner">
+				<a href="video-intelligence-api.html" class="cs-nav-link cs-nav-prev">
+					<span class="cs-nav-direction">← Previous</span>
+					<span class="cs-nav-title">Video Intelligence API</span>
+				</a>
+				<a href="../portfolio.html" class="cs-nav-all">← All Case Studies</a>
+				<a href="video-localisation.html" class="cs-nav-link cs-nav-next">
+					<span class="cs-nav-direction">Next →</span>
+					<span class="cs-nav-title">Agentic Video Localisation</span>
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- CTA -->
+	<section class="cta-section">
+		<div class="container">
+			<div class="cta-block animate-on-scroll">
+				<h2>Need AI that meets a compliance bar?</h2>
+				<p>I build agentic pipelines with built-in quality verification — not black boxes you have to trust blindly.</p>
+				<div class="cta-buttons">
+					<a href="https://calendly.com/jayapal-arunkumar" target="_blank" class="btn btn-primary">Schedule a Call</a>
+					<a href="../index.html#contact" class="btn btn-secondary-light">Send a Message</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		<div class="container">
+			<div class="footer-grid">
+				<div class="footer-brand">
+					<a href="../index.html" class="logo footer-logo">
+						<svg class="logo-icon" width="28" height="28" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<rect width="30" height="30" rx="7" fill="#2563eb"/>
+							<text x="15" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#ffffff" letter-spacing="-0.5">AI</text>
+						</svg>
+						Arun Jayapal
+					</a>
+					<p class="footer-tagline">Architecting Scalable,<br>Governed AI Systems.</p>
+				</div>
+				<div class="footer-nav-cols">
+					<div class="footer-nav-col">
+						<h4>Navigation</h4>
+						<ul>
+							<li><a href="../index.html">Home</a></li>
+							<li><a href="../framework.html">Framework</a></li>
+							<li><a href="../portfolio.html">Portfolio</a></li>
+						</ul>
+					</div>
+					<div class="footer-nav-col">
+						<h4>Connect</h4>
+						<ul>
+							<li><a href="https://www.linkedin.com/in/arunjeyapal/" target="_blank">LinkedIn</a></li>
+							<li><a href="mailto:contact@arunjayapal.com">Email</a></li>
+							<li><a href="../docs/resume_cv.pdf" target="_blank">Resume</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="footer-bottom"><p>&copy; 2025 Arun Jayapal. All rights reserved.</p></div>
+		</div>
+	</footer>
+
+	<script src="../js/config.js"></script>
+	<script src="../js/main.js"></script>
+</body>
+</html>

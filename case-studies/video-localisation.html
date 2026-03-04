@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Case Study: Agentic Video Localisation Pipeline — multi-stage autonomous pipeline with voice cloning, LLM translation, and human-in-the-loop review, built for Chainscript Labs.">
+	<title>Agentic Video Localisation — Case Study | Arun Jayapal</title>
+	<link rel="icon" type="image/png" href="../images/favicon.png">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+	<a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+	<header role="banner">
+		<nav class="container" role="navigation" aria-label="Main navigation">
+			<a href="../index.html" class="logo">
+				<svg class="logo-icon" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<rect width="30" height="30" rx="7" fill="#2563eb"/>
+					<text x="15" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#ffffff" letter-spacing="-0.5">AI</text>
+				</svg>
+				Arun Jayapal
+			</a>
+			<button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+			<ul class="nav-links">
+				<li><a href="../index.html">Home</a></li>
+				<li><a href="../index.html#services">Services</a></li>
+				<li><a href="../framework.html">Framework</a></li>
+				<li><a href="../portfolio.html" class="nav-active">Portfolio</a></li>
+				<li><a href="../index.html#contact">Contact</a></li>
+				<li><a href="https://calendly.com/jayapal-arunkumar" target="_blank" class="nav-cta-btn">Consultation</a></li>
+				<li><button class="theme-toggle" aria-label="Toggle dark mode"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button></li>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- Hero -->
+	<div class="cs-hero cs-hero--indigo" id="main-content">
+		<div class="container">
+			<div class="cs-hero-meta">
+				<span class="cs-category">Agentic Pipeline</span>
+				<span class="cs-client">Chainscript Labs</span>
+			</div>
+			<h1>From source video to voice-cloned localisation — fully automated</h1>
+			<p class="cs-hero-sub">A multi-stage agentic pipeline that fetches captions, orchestrates LLM translation, synthesises localised audio using voice cloning, and hands off to video assembly — with a human review gate before irreversible steps.</p>
+			<div class="cs-metrics">
+				<div class="cs-metric">
+					<span class="cs-metric-value">End-to-end</span>
+					<span class="cs-metric-label">Fully automated pipeline</span>
+				</div>
+				<div class="cs-metric">
+					<span class="cs-metric-value">Voice cloning</span>
+					<span class="cs-metric-label">Dia-1.6B / F5-TTS</span>
+				</div>
+				<div class="cs-metric">
+					<span class="cs-metric-value">Human gate</span>
+					<span class="cs-metric-label">Review before synthesis</span>
+				</div>
+				<div class="cs-metric">
+					<span class="cs-metric-value">Multi-stage</span>
+					<span class="cs-metric-label">Agentic orchestration</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Body -->
+	<div class="cs-body">
+		<div class="container">
+			<article class="cs-article animate-on-scroll">
+
+				<section class="cs-section">
+					<h2>The Challenge</h2>
+					<p>Localising video content is one of the most labour-intensive post-production workflows. A single piece of video content requires caption extraction, professional translation, voice recording in the target language, audio timing synchronisation, and final video assembly — with specialist handoffs at each stage. For content creators and studios producing at volume, this process is prohibitively expensive and slow.</p>
+					<p>Chainscript Labs needed to collapse this multi-day, multi-vendor workflow into an autonomous pipeline. The constraint was that voice quality had to be high enough for professional distribution — ruling out generic TTS — and the client needed to be able to review and approve the translation before audio synthesis began.</p>
+					<div class="cs-callout">
+						"The architecture had to respect the difference between reversible and irreversible steps. Translation can be corrected; voice synthesis is compute-intensive and produces an artefact. The review gate exists precisely at that boundary."
+					</div>
+				</section>
+
+				<section class="cs-section">
+					<h2>The Solution</h2>
+					<p>The Agentic Video Localisation Pipeline is a two-stage orchestration system. Stage one — caption extraction, translation, and review — is fast and reversible. Stage two — voice synthesis and video assembly — is compute-intensive and irreversible. A human-in-the-loop review gate sits between the two stages: the client approves the translated script before the system commits to synthesis.</p>
+					<p>Voice synthesis uses Dia-1.6B for voice cloning from a short reference sample, with F5-TTS as an alternative for languages where Dia performs less well. The synthesised audio is synchronised to the original video timeline using FFmpeg, producing a localised video that preserves the original pacing and visual content.</p>
+				</section>
+
+				<section class="cs-section">
+					<h2>How It Works</h2>
+					<div class="cs-flow">
+						<div class="cs-flow-step">
+							<div class="cs-flow-num">1</div>
+							<div class="cs-flow-content">
+								<strong>Caption Retrieval</strong>
+								<p>The pipeline fetches captions from the source video — from YouTube's caption API for YouTube content, or from a Whisper transcription run for uploaded video files. Captions are parsed into a timestamped segment list with start time, end time, and text for each segment.</p>
+							</div>
+						</div>
+						<div class="cs-flow-step">
+							<div class="cs-flow-num">2</div>
+							<div class="cs-flow-content">
+								<strong>LLM Translation</strong>
+								<p>Gemini translates the caption segments into the target language. Critically, timing constraints are passed alongside the text: the model is instructed to produce translations that, when spoken at natural pace, will fit within the original segment duration. Segments that exceed duration limits trigger a condensation pass.</p>
+							</div>
+						</div>
+						<div class="cs-flow-step">
+							<div class="cs-flow-num">3</div>
+							<div class="cs-flow-content">
+								<strong>Human Review Gate</strong>
+								<p>The translated script is presented to the client for review and approval before any synthesis begins. The client can edit individual segments, adjust timing hints, or flag segments for re-translation. Only after explicit approval does the pipeline proceed to stage two.</p>
+							</div>
+						</div>
+						<div class="cs-flow-step">
+							<div class="cs-flow-num">4</div>
+							<div class="cs-flow-content">
+								<strong>Voice Cloning &amp; Synthesis</strong>
+								<p>The approved translation is synthesised using Dia-1.6B, conditioned on a 10–30 second reference sample of the target speaker's voice. Each segment is synthesised independently with its timing target. F5-TTS serves as a fallback for languages or speaker profiles where Dia's output quality falls below threshold.</p>
+							</div>
+						</div>
+						<div class="cs-flow-step">
+							<div class="cs-flow-num">5</div>
+							<div class="cs-flow-content">
+								<strong>Audio Synchronisation</strong>
+								<p>Synthesised audio segments are assembled into a full audio track using FFmpeg, with timing adjustments applied where synthesis duration drifted from the target. The original audio is muted and replaced with the localised track; background music and sound effects are preserved from the original.</p>
+							</div>
+						</div>
+						<div class="cs-flow-step">
+							<div class="cs-flow-num">6</div>
+							<div class="cs-flow-content">
+								<strong>Video Assembly &amp; Delivery</strong>
+								<p>The final video is assembled by FFmpeg — original video stream combined with the synthesised audio track, with localised subtitles optionally burned in. The output is encoded to the target specification and delivered to the client's storage location via the API.</p>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="cs-section">
+					<h2>Technical Highlights</h2>
+					<div class="cs-highlights">
+						<div class="cs-highlight-card">
+							<h4>Duration-Constrained Translation</h4>
+							<p>Standard LLM translation optimises for semantic accuracy — it does not consider whether the output will fit in the original segment's time slot when spoken aloud. This pipeline passes segment durations as hard constraints, and a condensation agent automatically trims translations that exceed their window without human intervention.</p>
+						</div>
+						<div class="cs-highlight-card">
+							<h4>Reversible / Irreversible Stage Separation</h4>
+							<p>The pipeline's architecture explicitly models the cost of each stage. Translation is cheap and reversible; voice synthesis is expensive and produces a committed artefact. The human review gate enforces a clean boundary between these stages — preventing the system from wasting synthesis compute on translations the client would reject.</p>
+						</div>
+						<div class="cs-highlight-card">
+							<h4>Dual TTS Engine Strategy</h4>
+							<p>Dia-1.6B delivers high-quality voice cloning but has language coverage gaps. F5-TTS is configured as a hot fallback: after synthesis, a quality classifier scores the Dia output on naturalness and timing accuracy. Segments below threshold are automatically re-synthesised with F5-TTS, with no manual intervention required.</p>
+						</div>
+						<div class="cs-highlight-card">
+							<h4>Stateful Pipeline Orchestration</h4>
+							<p>Each job's state — retrieval complete, translation approved, synthesis in progress, assembly complete — is tracked in a PostgreSQL state machine. The Flask API exposes real-time job status so clients can monitor progress and receive completion webhooks at each stage boundary.</p>
+						</div>
+					</div>
+				</section>
+
+				<section class="cs-section">
+					<h2>The Stack</h2>
+					<div class="cs-stack">
+						<span class="cs-chip">Flask</span>
+						<span class="cs-chip">Google Gemini</span>
+						<span class="cs-chip">Dia-1.6B</span>
+						<span class="cs-chip">F5-TTS</span>
+						<span class="cs-chip">FFmpeg</span>
+						<span class="cs-chip">Whisper</span>
+						<span class="cs-chip">YouTube Data API</span>
+						<span class="cs-chip">PostgreSQL</span>
+						<span class="cs-chip">SQLAlchemy</span>
+						<span class="cs-chip">Docker</span>
+					</div>
+				</section>
+
+				<section class="cs-section">
+					<h2>Outcomes</h2>
+					<ul class="cs-outcomes-list">
+						<li><span class="cs-outcome-dot"></span>End-to-end video localisation time collapsed from a multi-day, multi-vendor workflow to hours — with human review preserved at the critical approval gate.</li>
+						<li><span class="cs-outcome-dot"></span>Duration-constrained translation eliminated the common problem of synthesised audio overrunning segment boundaries, producing naturally-paced localised audio without manual timing adjustments.</li>
+						<li><span class="cs-outcome-dot"></span>The dual TTS engine strategy ensured consistent voice quality across target languages, with automatic fallback handling language coverage gaps without any client-visible failure.</li>
+						<li><span class="cs-outcome-dot"></span>The stateful pipeline architecture meant failed or interrupted jobs could be resumed from any stage — no re-processing of already-completed synthesis segments.</li>
+					</ul>
+				</section>
+
+			</article>
+		</div>
+	</div>
+
+	<!-- Case Study Navigation -->
+	<div class="cs-nav">
+		<div class="container">
+			<div class="cs-nav-inner">
+				<a href="pdf-translation.html" class="cs-nav-link cs-nav-prev">
+					<span class="cs-nav-direction">← Previous</span>
+					<span class="cs-nav-title">Agentic PDF Translation</span>
+				</a>
+				<a href="../portfolio.html" class="cs-nav-all">← All Case Studies</a>
+				<a href="event-ticketing.html" class="cs-nav-link cs-nav-next">
+					<span class="cs-nav-direction">Next →</span>
+					<span class="cs-nav-title">Event Ticketing &amp; Live Check-in</span>
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- CTA -->
+	<section class="cta-section">
+		<div class="container">
+			<div class="cta-block animate-on-scroll">
+				<h2>Building a content localisation workflow?</h2>
+				<p>I design agentic pipelines that automate the tedious, preserve the human oversight that matters, and scale without breaking.</p>
+				<div class="cta-buttons">
+					<a href="https://calendly.com/jayapal-arunkumar" target="_blank" class="btn btn-primary">Schedule a Call</a>
+					<a href="../index.html#contact" class="btn btn-secondary-light">Send a Message</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		<div class="container">
+			<div class="footer-grid">
+				<div class="footer-brand">
+					<a href="../index.html" class="logo footer-logo">
+						<svg class="logo-icon" width="28" height="28" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<rect width="30" height="30" rx="7" fill="#2563eb"/>
+							<text x="15" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#ffffff" letter-spacing="-0.5">AI</text>
+						</svg>
+						Arun Jayapal
+					</a>
+					<p class="footer-tagline">Architecting Scalable,<br>Governed AI Systems.</p>
+				</div>
+				<div class="footer-nav-cols">
+					<div class="footer-nav-col">
+						<h4>Navigation</h4>
+						<ul>
+							<li><a href="../index.html">Home</a></li>
+							<li><a href="../framework.html">Framework</a></li>
+							<li><a href="../portfolio.html">Portfolio</a></li>
+						</ul>
+					</div>
+					<div class="footer-nav-col">
+						<h4>Connect</h4>
+						<ul>
+							<li><a href="https://www.linkedin.com/in/arunjeyapal/" target="_blank">LinkedIn</a></li>
+							<li><a href="mailto:contact@arunjayapal.com">Email</a></li>
+							<li><a href="../docs/resume_cv.pdf" target="_blank">Resume</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="footer-bottom"><p>&copy; 2025 Arun Jayapal. All rights reserved.</p></div>
+		</div>
+	</footer>
+
+	<script src="../js/config.js"></script>
+	<script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Case Study: DataFlow Conversational Agent — natural language data transformation system built for Adfluence Hub using FastAPI, Gemini, Pandas, and PostgreSQL.">
+	<title>DataFlow Conversational Agent — Case Study | Arun Jayapal</title>
+	<link rel="icon" type="image/png" href="../images/favicon.png">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+	<a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+	<header role="banner">
+		<nav class="container" role="navigation" aria-label="Main navigation">
+			<a href="../index.html" class="logo">
+				<svg class="logo-icon" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<rect width="30" height="30" rx="7" fill="#2563eb"/>
+					<text x="15" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#ffffff" letter-spacing="-0.5">AI</text>
+				</svg>
+				Arun Jayapal
+			</a>
+			<button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+			<ul class="nav-links">
+				<li><a href="../index.html">Home</a></li>
+				<li><a href="../index.html#services">Services</a></li>
+				<li><a href="../framework.html">Framework</a></li>
+				<li><a href="../portfolio.html" class="nav-active">Portfolio</a></li>
+				<li><a href="../index.html#contact">Contact</a></li>
+				<li><a href="https://calendly.com/jayapal-arunkumar" target="_blank" class="nav-cta-btn">Consultation</a></li>
+				<li><button class="theme-toggle" aria-label="Toggle dark mode"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button></li>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- Hero -->
+	<div class="cs-hero cs-hero--teal" id="main-content">
+		<div class="container">
+			<div class="cs-hero-meta">
+				<span class="cs-category">NL Analytics</span>
+				<span class="cs-client">Adfluence Hub</span>
+			</div>
+			<h1>Turning plain English into production-grade data transformations</h1>
+			<p class="cs-hero-sub">A conversational agent that interprets natural language instructions, plans multi-step data operations, generates executable Pandas code, and surfaces results — without a single line of user-written code.</p>
+			<div class="cs-metrics">
+				<div class="cs-metric">
+					<span class="cs-metric-value">NL → Code</span>
+					<span class="cs-metric-label">Gemini-powered pipeline</span>
+				</div>
+				<div class="cs-metric">
+					<span class="cs-metric-value">Multi-step</span>
+					<span class="cs-metric-label">Chained operations</span>
+				</div>
+				<div class="cs-metric">
+					<span class="cs-metric-value">Session</span>
+					<span class="cs-metric-label">Persistent conversation state</span>
+				</div>
+				<div class="cs-metric">
+					<span class="cs-metric-value">Safe</span>
+					<span class="cs-metric-label">Sandboxed code execution</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Body -->
+	<div class="cs-body">
+		<div class="container">
+			<article class="cs-article animate-on-scroll">
+
+				<section class="cs-section">
+					<h2>The Challenge</h2>
+					<p>Data analysts at Adfluence Hub were spending hours on repetitive transformation work — filtering, pivoting, aggregating, and joining Excel or CSV exports before any real analysis could begin. The tooling options were either too technical (Python, SQL) or too limited (spreadsheet formulas).</p>
+					<p>What was needed wasn't another BI tool with a drag-and-drop interface. The team needed to express what they wanted — in plain language — and have the system figure out the steps, write the code, and return the result. The key constraint: the system had to be production-reliable, not a demo that collapses on edge cases.</p>
+					<div class="cs-callout">
+						"The goal wasn't to teach analysts to code. It was to let them stay in their domain language while the system handled the translation into execution logic."
+					</div>
+				</section>
+
+				<section class="cs-section">
+					<h2>The Solution</h2>
+					<p>DataFlow is a full-stack conversational data agent. Users upload a dataset — CSV, Excel, or a database connection — describe what they want in natural language, and receive the transformed result along with the generated code that produced it.</p>
+					<p>Under the hood, Gemini decomposes the natural language instruction into a structured operation plan, generates syntactically valid Pandas code for each step, and executes it in a sandboxed environment. The conversation is stateful: follow-up instructions reference earlier transformations, letting analysts build analysis incrementally the same way they would in a conversation with a colleague.</p>
+				</section>
+
+				<section class="cs-section">
+					<h2>How It Works</h2>
+					<div class="cs-flow">
+						<div class="cs-flow-step">
+							<div class="cs-flow-num">1</div>
+							<div class="cs-flow-content">
+								<strong>Dataset Ingestion</strong>
+								<p>The user uploads a file (CSV/Excel) or connects a database. The backend profiles the dataset — infers column types, detects date formats, flags nulls — and passes this schema context to the LLM.</p>
+							</div>
+						</div>
+						<div class="cs-flow-step">
+							<div class="cs-flow-num">2</div>
+							<div class="cs-flow-content">
+								<strong>Intent Parsing</strong>
+								<p>The user's natural language instruction is sent to Gemini with the dataset schema and conversation history as context. Gemini returns a structured operation plan: an ordered list of transformation steps with types, parameters, and expected outputs.</p>
+							</div>
+						</div>
+						<div class="cs-flow-step">
+							<div class="cs-flow-num">3</div>
+							<div class="cs-flow-content">
+								<strong>Code Generation</strong>
+								<p>Each step in the plan maps to a generated Pandas expression. Gemini produces clean, commented Python — no hallucinated APIs, no invalid column references — because the schema is part of the prompt context that constrains generation.</p>
+							</div>
+						</div>
+						<div class="cs-flow-step">
+							<div class="cs-flow-num">4</div>
+							<div class="cs-flow-content">
+								<strong>Sandboxed Execution</strong>
+								<p>The generated code runs in an isolated execution environment. Runtime exceptions are caught and fed back to Gemini for self-correction — the system retries up to three times before surfacing a graceful error to the user.</p>
+							</div>
+						</div>
+						<div class="cs-flow-step">
+							<div class="cs-flow-num">5</div>
+							<div class="cs-flow-content">
+								<strong>Result Delivery</strong>
+								<p>The transformed DataFrame is serialised and returned to the React frontend, where it renders as an interactive table. The generated code is shown alongside — giving analysts full transparency into what the system did and why.</p>
+							</div>
+						</div>
+						<div class="cs-flow-step">
+							<div class="cs-flow-num">6</div>
+							<div class="cs-flow-content">
+								<strong>Stateful Conversation</strong>
+								<p>Each exchange is persisted to PostgreSQL. The conversation history and the current state of the dataset are stored so users can return to a session, fork an analysis, or compare transformations across different instruction paths.</p>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="cs-section">
+					<h2>Technical Highlights</h2>
+					<div class="cs-highlights">
+						<div class="cs-highlight-card">
+							<h4>Schema-Constrained Prompting</h4>
+							<p>Every Gemini call includes the full dataset schema as structured context. Column names, inferred types, null counts, and sample values are injected into the prompt — dramatically reducing hallucinated column references and type errors compared to unconstrained generation.</p>
+						</div>
+						<div class="cs-highlight-card">
+							<h4>Self-Correcting Execution Loop</h4>
+							<p>When generated code raises a runtime exception, the error traceback is appended to the conversation and Gemini is re-prompted to correct the code. This retry loop runs up to three times before failing gracefully — handling the long tail of edge cases without brittle hand-coded error logic.</p>
+						</div>
+						<div class="cs-highlight-card">
+							<h4>Stateful Session Architecture</h4>
+							<p>Conversation state, intermediate DataFrames, and the full operation history are persisted in PostgreSQL via SQLAlchemy. Sessions can be resumed, forked, or shared — and analysts can roll back to any prior transformation state with a single instruction.</p>
+						</div>
+						<div class="cs-highlight-card">
+							<h4>Multi-Step Operation Planning</h4>
+							<p>Rather than generating a single monolithic transformation, Gemini produces a structured operation plan with discrete steps. This allows partial results to surface even when a later step fails, and gives users an auditable trace of every transformation the system applied.</p>
+						</div>
+					</div>
+				</section>
+
+				<section class="cs-section">
+					<h2>The Stack</h2>
+					<div class="cs-stack">
+						<span class="cs-chip">FastAPI</span>
+						<span class="cs-chip">Google Gemini</span>
+						<span class="cs-chip">Pandas</span>
+						<span class="cs-chip">PostgreSQL</span>
+						<span class="cs-chip">SQLAlchemy (async)</span>
+						<span class="cs-chip">React</span>
+						<span class="cs-chip">Vite</span>
+						<span class="cs-chip">Tailwind CSS</span>
+						<span class="cs-chip">python-jose (JWT)</span>
+						<span class="cs-chip">OpenPyXL</span>
+					</div>
+				</section>
+
+				<section class="cs-section">
+					<h2>Outcomes</h2>
+					<ul class="cs-outcomes-list">
+						<li><span class="cs-outcome-dot"></span>Analysts reduced routine data preparation time from hours to minutes — without writing a single line of code.</li>
+						<li><span class="cs-outcome-dot"></span>The self-correcting execution loop resolves the majority of LLM code errors automatically, with no user intervention required.</li>
+						<li><span class="cs-outcome-dot"></span>Full code transparency alongside results increased analyst trust in the system — they could verify what the agent did, not just accept the output.</li>
+						<li><span class="cs-outcome-dot"></span>Stateful sessions enabled multi-session analysis workflows, allowing teams to build on each other's work rather than starting from scratch.</li>
+					</ul>
+				</section>
+
+			</article>
+		</div>
+	</div>
+
+	<!-- Case Study Navigation -->
+	<div class="cs-nav">
+		<div class="container">
+			<div class="cs-nav-inner">
+				<a href="agentic-ideation-sandbox.html" class="cs-nav-link cs-nav-prev">
+					<span class="cs-nav-direction">← Previous</span>
+					<span class="cs-nav-title">Agentic Ideation Sandbox</span>
+				</a>
+				<a href="../portfolio.html" class="cs-nav-all">← All Case Studies</a>
+				<a href="video-intelligence-api.html" class="cs-nav-link cs-nav-next">
+					<span class="cs-nav-direction">Next →</span>
+					<span class="cs-nav-title">Video Intelligence API</span>
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- CTA -->
+	<section class="cta-section">
+		<div class="container">
+			<div class="cta-block animate-on-scroll">
+				<h2>Need a natural language interface for your data?</h2>
+				<p>I build LLM-powered data agents that work reliably in production — not just on clean demo datasets.</p>
+				<div class="cta-buttons">
+					<a href="https://calendly.com/jayapal-arunkumar" target="_blank" class="btn btn-primary">Schedule a Call</a>
+					<a href="../index.html#contact" class="btn btn-secondary-light">Send a Message</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		<div class="container">
+			<div class="footer-grid">
+				<div class="footer-brand">
+					<a href="../index.html" class="logo footer-logo">
+						<svg class="logo-icon" width="28" height="28" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<rect width="30" height="30" rx="7" fill="#2563eb"/>
+							<text x="15" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#ffffff" letter-spacing="-0.5">AI</text>
+						</svg>
+						Arun Jayapal
+					</a>
+					<p class="footer-tagline">Architecting Scalable,<br>Governed AI Systems.</p>
+				</div>
+				<div class="footer-nav-cols">
+					<div class="footer-nav-col">
+						<h4>Navigation</h4>
+						<ul>
+							<li><a href="../index.html">Home</a></li>
+							<li><a href="../framework.html">Framework</a></li>
+							<li><a href="../portfolio.html">Portfolio</a></li>
+						</ul>
+					</div>
+					<div class="footer-nav-col">
+						<h4>Connect</h4>
+						<ul>
+							<li><a href="https://www.linkedin.com/in/arunjeyapal/" target="_blank">LinkedIn</a></li>
+							<li><a href="mailto:contact@arunjayapal.com">Email</a></li>
+							<li><a href="../docs/resume_cv.pdf" target="_blank">Resume</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="footer-bottom"><p>&copy; 2025 Arun Jayapal. All rights reserved.</p></div>
+		</div>
+	</footer>
+
+	<script src="../js/config.js"></script>
+	<script src="../js/main.js"></script>
+</body>
+</html>

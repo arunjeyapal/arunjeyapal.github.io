@@ -61,11 +61,12 @@ function validateForm() {
 // Contact Form Handler
 function initContactForm() {
 	const form = document.getElementById('contactForm');
+
+	if (!form) return;
+
 	const result = document.getElementById('result');
 	const submitBtn = form.querySelector('.btn-submit');
 	const submitText = document.getElementById('submit-text');
-
-	if (!form) return;
 
 	// Add real-time validation
 	['name', 'email', 'service', 'message'].forEach(field => {

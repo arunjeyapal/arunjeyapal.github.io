@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Case Study: Video Intelligence API — multimodal AI system for automated video analysis built for Adfluence Hub using FastAPI, Gemini Vision, and Docker.">
+	<title>Video Intelligence API — Case Study | Arun Jayapal</title>
+	<link rel="icon" type="image/png" href="../images/favicon.png">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+	<a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+	<header role="banner">
+		<nav class="container" role="navigation" aria-label="Main navigation">
+			<a href="../index.html" class="logo">
+				<svg class="logo-icon" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<rect width="30" height="30" rx="7" fill="#2563eb"/>
+					<text x="15" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#ffffff" letter-spacing="-0.5">AI</text>
+				</svg>
+				Arun Jayapal
+			</a>
+			<button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+			<ul class="nav-links">
+				<li><a href="../index.html">Home</a></li>
+				<li><a href="../index.html#services">Services</a></li>
+				<li><a href="../framework.html">Framework</a></li>
+				<li><a href="../portfolio.html" class="nav-active">Portfolio</a></li>
+				<li><a href="../index.html#contact">Contact</a></li>
+				<li><a href="https://calendly.com/jayapal-arunkumar" target="_blank" class="nav-cta-btn">Consultation</a></li>
+				<li><button class="theme-toggle" aria-label="Toggle dark mode"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button></li>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- Hero -->
+	<div class="cs-hero cs-hero--orange" id="main-content">
+		<div class="container">
+			<div class="cs-hero-meta">
+				<span class="cs-category">Multimodal AI</span>
+				<span class="cs-client">Adfluence Hub</span>
+			</div>
+			<h1>Extracting structured intelligence from hours of video — automatically</h1>
+			<p class="cs-hero-sub">A high-throughput API that feeds video through multimodal LLM analysis, extracts key moments with timestamped precision, and returns structured, actionable reports — without a human reviewer in the loop.</p>
+			<div class="cs-metrics">
+				<div class="cs-metric">
+					<span class="cs-metric-value">Multimodal</span>
+					<span class="cs-metric-label">Vision + audio analysis</span>
+				</div>
+				<div class="cs-metric">
+					<span class="cs-metric-value">Async</span>
+					<span class="cs-metric-label">Non-blocking job queue</span>
+				</div>
+				<div class="cs-metric">
+					<span class="cs-metric-value">Structured</span>
+					<span class="cs-metric-label">JSON reports per video</span>
+				</div>
+				<div class="cs-metric">
+					<span class="cs-metric-value">Scalable</span>
+					<span class="cs-metric-label">Docker + S3 architecture</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Body -->
+	<div class="cs-body">
+		<div class="container">
+			<article class="cs-article animate-on-scroll">
+
+				<section class="cs-section">
+					<h2>The Challenge</h2>
+					<p>Adfluence Hub manages large volumes of video content — creator submissions, campaign recordings, performance clips — and needed to extract structured intelligence from it at scale. Manual review was the bottleneck: a human reviewer could watch perhaps 20–30 hours of video per week, creating an ever-growing backlog as content volume increased.</p>
+					<p>The requirement was to build a system that could process video programmatically: identify key moments, classify content segments, extract spoken claims, and produce a structured report — all without human intervention in the standard pipeline.</p>
+					<div class="cs-callout">
+						"The insight was treating video not as a media file, but as a data source. Every frame and every spoken word is structured information waiting to be extracted."
+					</div>
+				</section>
+
+				<section class="cs-section">
+					<h2>The Solution</h2>
+					<p>The Video Intelligence API accepts video uploads, stores them on S3, and queues them for multimodal analysis through Gemini's vision capabilities. The system extracts frames at configurable intervals, combines them with transcribed audio, and runs a battery of analytical prompts to surface key moments, content classifications, speaker claims, and quality signals.</p>
+					<p>All processing is asynchronous — clients submit a video and poll or receive a webhook when the report is ready. The entire pipeline runs in Docker containers, making it straightforward to scale analysis workers independently of the API layer.</p>
+				</section>
+
+				<section class="cs-section">
+					<h2>How It Works</h2>
+					<div class="cs-flow">
+						<div class="cs-flow-step">
+							<div class="cs-flow-num">1</div>
+							<div class="cs-flow-content">
+								<strong>Ingest &amp; Store</strong>
+								<p>Videos are uploaded via the FastAPI endpoint, validated for format and size, and stored on S3 with a unique job ID. The API returns immediately with a job reference — no waiting for analysis to complete.</p>
+							</div>
+						</div>
+						<div class="cs-flow-step">
+							<div class="cs-flow-num">2</div>
+							<div class="cs-flow-content">
+								<strong>Frame Extraction</strong>
+								<p>A worker process retrieves the video from S3 and uses FFmpeg to extract frames at configurable intervals (e.g. every 2 seconds, or keyframes only). The extraction strategy is tuned per use case — dense sampling for action-heavy content, sparse for talking-head video.</p>
+							</div>
+						</div>
+						<div class="cs-flow-step">
+							<div class="cs-flow-num">3</div>
+							<div class="cs-flow-content">
+								<strong>Audio Transcription</strong>
+								<p>Audio is extracted and transcribed in parallel with frame extraction. The transcript is segmented and timestamped, creating a text track that aligns with the visual frames for joint multimodal analysis.</p>
+							</div>
+						</div>
+						<div class="cs-flow-step">
+							<div class="cs-flow-num">4</div>
+							<div class="cs-flow-content">
+								<strong>Multimodal Analysis</strong>
+								<p>Frame batches are sent to Gemini Vision alongside the aligned transcript segments. Analytical prompts target different signals: key moment detection, content classification, on-screen text extraction, speaker claim identification, and brand safety flags.</p>
+							</div>
+						</div>
+						<div class="cs-flow-step">
+							<div class="cs-flow-num">5</div>
+							<div class="cs-flow-content">
+								<strong>Report Assembly</strong>
+								<p>Individual analysis results are aggregated into a structured JSON report with timestamped entries for each detected signal. A summary section synthesises the key findings across the full video duration.</p>
+							</div>
+						</div>
+						<div class="cs-flow-step">
+							<div class="cs-flow-num">6</div>
+							<div class="cs-flow-content">
+								<strong>Delivery</strong>
+								<p>The completed report is stored in PostgreSQL linked to the job ID and optionally delivered via webhook. Clients can retrieve full reports, filtered subsets (e.g. only brand safety flags), or paginated moment timelines via the REST API.</p>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="cs-section">
+					<h2>Technical Highlights</h2>
+					<div class="cs-highlights">
+						<div class="cs-highlight-card">
+							<h4>Joint Frame + Transcript Analysis</h4>
+							<p>Rather than analysing video and audio in separate, independent pipelines, the system aligns frames and transcript segments by timestamp before sending them to Gemini. This joint multimodal context allows the model to reason about what is <em>said</em> relative to what is <em>shown</em> — catching contradictions, on-screen text, and visual-verbal claim pairs that single-modality analysis misses.</p>
+						</div>
+						<div class="cs-highlight-card">
+							<h4>Configurable Extraction Strategies</h4>
+							<p>Frame sampling rate, analysis prompt set, and output schema are all configurable per job via the API request body. Different content types require different analysis cadences — a 30-second ad clip needs different extraction density than a 40-minute interview recording.</p>
+						</div>
+						<div class="cs-highlight-card">
+							<h4>Decoupled Worker Architecture</h4>
+							<p>The API layer and the analysis workers are fully decoupled: the API handles ingest and result retrieval; workers handle the compute-intensive processing pipeline. Workers can be scaled horizontally without any changes to the API, and failed jobs re-enter the queue automatically with exponential backoff.</p>
+						</div>
+						<div class="cs-highlight-card">
+							<h4>Structured Output Enforcement</h4>
+							<p>All Gemini analysis calls use structured output mode with explicit JSON schemas. This eliminates post-processing parsing failures and ensures consistent report structure regardless of video content variability — critical for downstream systems that consume the reports programmatically.</p>
+						</div>
+					</div>
+				</section>
+
+				<section class="cs-section">
+					<h2>The Stack</h2>
+					<div class="cs-stack">
+						<span class="cs-chip">FastAPI</span>
+						<span class="cs-chip">Google Gemini Vision</span>
+						<span class="cs-chip">FFmpeg</span>
+						<span class="cs-chip">AWS S3</span>
+						<span class="cs-chip">PostgreSQL</span>
+						<span class="cs-chip">SQLAlchemy (async)</span>
+						<span class="cs-chip">Docker</span>
+						<span class="cs-chip">Celery</span>
+						<span class="cs-chip">Redis</span>
+						<span class="cs-chip">python-jose (JWT)</span>
+					</div>
+				</section>
+
+				<section class="cs-section">
+					<h2>Outcomes</h2>
+					<ul class="cs-outcomes-list">
+						<li><span class="cs-outcome-dot"></span>Video review throughput scaled from the human-constrained baseline to processing hours of content per minute — with no increase in headcount.</li>
+						<li><span class="cs-outcome-dot"></span>Structured JSON reports enabled downstream systems to consume video intelligence programmatically, unlocking automated compliance checks and content scoring.</li>
+						<li><span class="cs-outcome-dot"></span>The decoupled worker architecture allowed analysis capacity to be scaled independently during peak submission periods without touching the API or client integrations.</li>
+						<li><span class="cs-outcome-dot"></span>Joint multimodal analysis surfaced signal categories — visual-verbal contradictions, on-screen text extraction — that single-modality review pipelines had previously missed entirely.</li>
+					</ul>
+				</section>
+
+			</article>
+		</div>
+	</div>
+
+	<!-- Case Study Navigation -->
+	<div class="cs-nav">
+		<div class="container">
+			<div class="cs-nav-inner">
+				<a href="dataflow.html" class="cs-nav-link cs-nav-prev">
+					<span class="cs-nav-direction">← Previous</span>
+					<span class="cs-nav-title">DataFlow Conversational Agent</span>
+				</a>
+				<a href="../portfolio.html" class="cs-nav-all">← All Case Studies</a>
+				<a href="pdf-translation.html" class="cs-nav-link cs-nav-next">
+					<span class="cs-nav-direction">Next →</span>
+					<span class="cs-nav-title">Agentic PDF Translation</span>
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- CTA -->
+	<section class="cta-section">
+		<div class="container">
+			<div class="cta-block animate-on-scroll">
+				<h2>Processing video at scale?</h2>
+				<p>I build multimodal AI pipelines that extract real intelligence from media — reliably, at production volume.</p>
+				<div class="cta-buttons">
+					<a href="https://calendly.com/jayapal-arunkumar" target="_blank" class="btn btn-primary">Schedule a Call</a>
+					<a href="../index.html#contact" class="btn btn-secondary-light">Send a Message</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		<div class="container">
+			<div class="footer-grid">
+				<div class="footer-brand">
+					<a href="../index.html" class="logo footer-logo">
+						<svg class="logo-icon" width="28" height="28" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<rect width="30" height="30" rx="7" fill="#2563eb"/>
+							<text x="15" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#ffffff" letter-spacing="-0.5">AI</text>
+						</svg>
+						Arun Jayapal
+					</a>
+					<p class="footer-tagline">Architecting Scalable,<br>Governed AI Systems.</p>
+				</div>
+				<div class="footer-nav-cols">
+					<div class="footer-nav-col">
+						<h4>Navigation</h4>
+						<ul>
+							<li><a href="../index.html">Home</a></li>
+							<li><a href="../framework.html">Framework</a></li>
+							<li><a href="../portfolio.html">Portfolio</a></li>
+						</ul>
+					</div>
+					<div class="footer-nav-col">
+						<h4>Connect</h4>
+						<ul>
+							<li><a href="https://www.linkedin.com/in/arunjeyapal/" target="_blank">LinkedIn</a></li>
+							<li><a href="mailto:contact@arunjayapal.com">Email</a></li>
+							<li><a href="../docs/resume_cv.pdf" target="_blank">Resume</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="footer-bottom"><p>&copy; 2025 Arun Jayapal. All rights reserved.</p></div>
+		</div>
+	</footer>
+
+	<script src="../js/config.js"></script>
+	<script src="../js/main.js"></script>
+</body>
+</html>

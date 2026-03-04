@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Case Study: Event Ticketing & Live Check-in System — secure, scalable ticketing backend with QR codes, Fernet encryption, and real-time check-in, built for Chainscript Labs.">
+	<title>Event Ticketing &amp; Live Check-in — Case Study | Arun Jayapal</title>
+	<link rel="icon" type="image/png" href="../images/favicon.png">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+	<a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+	<header role="banner">
+		<nav class="container" role="navigation" aria-label="Main navigation">
+			<a href="../index.html" class="logo">
+				<svg class="logo-icon" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<rect width="30" height="30" rx="7" fill="#2563eb"/>
+					<text x="15" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#ffffff" letter-spacing="-0.5">AI</text>
+				</svg>
+				Arun Jayapal
+			</a>
+			<button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+			<ul class="nav-links">
+				<li><a href="../index.html">Home</a></li>
+				<li><a href="../index.html#services">Services</a></li>
+				<li><a href="../framework.html">Framework</a></li>
+				<li><a href="../portfolio.html" class="nav-active">Portfolio</a></li>
+				<li><a href="../index.html#contact">Contact</a></li>
+				<li><a href="https://calendly.com/jayapal-arunkumar" target="_blank" class="nav-cta-btn">Consultation</a></li>
+				<li><button class="theme-toggle" aria-label="Toggle dark mode"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button></li>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- Hero -->
+	<div class="cs-hero cs-hero--violet" id="main-content">
+		<div class="container">
+			<div class="cs-hero-meta">
+				<span class="cs-category">Scalable Architecture</span>
+				<span class="cs-client">Chainscript Labs</span>
+			</div>
+			<h1>Secure, real-time event ticketing built for concurrent load</h1>
+			<p class="cs-hero-sub">A production backend for digital ticket generation, encrypted attendee data storage, camera-based QR check-in, and a secure admin dashboard — designed to handle concurrent event loads without degradation.</p>
+			<div class="cs-metrics">
+				<div class="cs-metric">
+					<span class="cs-metric-value">Encrypted</span>
+					<span class="cs-metric-label">Fernet attendee data</span>
+				</div>
+				<div class="cs-metric">
+					<span class="cs-metric-value">Real-time</span>
+					<span class="cs-metric-label">Live check-in dashboard</span>
+				</div>
+				<div class="cs-metric">
+					<span class="cs-metric-value">QR-based</span>
+					<span class="cs-metric-label">Tamper-evident tickets</span>
+				</div>
+				<div class="cs-metric">
+					<span class="cs-metric-value">HTTPS</span>
+					<span class="cs-metric-label">Locally trusted TLS (mkcert)</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Body -->
+	<div class="cs-body">
+		<div class="container">
+			<article class="cs-article animate-on-scroll">
+
+				<section class="cs-section">
+					<h2>The Challenge</h2>
+					<p>Chainscript Labs needed a ticketing system for their events that went beyond the limitations of off-the-shelf platforms: full control over attendee data, the ability to integrate with their existing identity infrastructure, and a check-in experience that would hold up under the concentrated load of hundreds of attendees arriving simultaneously at an event entrance.</p>
+					<p>The security requirements were non-negotiable. Attendee PII could not leave the controlled environment unencrypted. Tickets had to be cryptographically tamper-evident — a screenshot of a QR code should not be redeemable. And the check-in system had to detect and reject duplicate redemption attempts in real time, even under concurrent scanner load.</p>
+					<div class="cs-callout">
+						"The hardest problem wasn't generating tickets — it was ensuring that the same ticket couldn't be scanned twice within a 200ms window when three check-in operators are working the same entrance simultaneously."
+					</div>
+				</section>
+
+				<section class="cs-section">
+					<h2>The Solution</h2>
+					<p>The system is a FastAPI backend with three distinct surfaces: a registration API for attendee self-service, an admin dashboard for event management and live check-in monitoring, and a check-in API consumed by camera-equipped scanning clients. Attendee data is encrypted at rest using Fernet symmetric encryption. Tickets are generated as cryptographically signed QR codes — the QR payload includes a ticket ID and a HMAC signature over the ticket metadata, so any tampered QR fails signature validation before redemption is attempted.</p>
+					<p>The check-in flow uses PostgreSQL row-level locking to prevent duplicate redemption under concurrent scanner load. A ticket's status transitions from <code>ISSUED</code> to <code>REDEEMED</code> inside a serialisable transaction — a second concurrent redemption attempt for the same ticket ID reads the already-committed status and returns a rejection immediately.</p>
+				</section>
+
+				<section class="cs-section">
+					<h2>How It Works</h2>
+					<div class="cs-flow">
+						<div class="cs-flow-step">
+							<div class="cs-flow-num">1</div>
+							<div class="cs-flow-content">
+								<strong>Attendee Registration</strong>
+								<p>Attendees register via a web form or API. The backend validates the registration, stores the attendee record with PII fields encrypted using Fernet (symmetric encryption with the key held in the server environment, not the database), and issues a unique ticket ID.</p>
+							</div>
+						</div>
+						<div class="cs-flow-step">
+							<div class="cs-flow-num">2</div>
+							<div class="cs-flow-content">
+								<strong>Ticket Generation</strong>
+								<p>A QR code is generated for each ticket. The QR payload is a JWT-signed JSON object containing the ticket ID, event ID, and attendee reference. The JWT signature uses a server-side secret, making the QR cryptographically tamper-evident — any modification to the payload invalidates the signature.</p>
+							</div>
+						</div>
+						<div class="cs-flow-step">
+							<div class="cs-flow-num">3</div>
+							<div class="cs-flow-content">
+								<strong>Ticket Delivery</strong>
+								<p>Tickets are delivered to attendees as PDF downloads containing the QR code and event details. The PDF is generated server-side and served directly — no third-party delivery service handles the ticket data.</p>
+							</div>
+						</div>
+						<div class="cs-flow-step">
+							<div class="cs-flow-num">4</div>
+							<div class="cs-flow-content">
+								<strong>Check-in Scanning</strong>
+								<p>Check-in operators use camera-equipped devices running a lightweight web client. The client decodes the QR code and POSTs the payload to the check-in API. The API validates the JWT signature, then attempts to atomically transition the ticket status inside a serialisable transaction — preventing duplicate redemption under concurrent scanner load.</p>
+							</div>
+						</div>
+						<div class="cs-flow-step">
+							<div class="cs-flow-num">5</div>
+							<div class="cs-flow-content">
+								<strong>Real-Time Dashboard</strong>
+								<p>The admin dashboard receives check-in events via server-sent events (SSE). Organisers see attendance count, check-in rate, and per-ticket status in real time — with immediate visibility into any redemption rejection events (duplicate scan attempts, invalid signatures).</p>
+							</div>
+						</div>
+						<div class="cs-flow-step">
+							<div class="cs-flow-num">6</div>
+							<div class="cs-flow-content">
+								<strong>Secure Local Deployment</strong>
+								<p>The full stack runs on-premises at the event venue over a local network, with HTTPS enforced using mkcert-generated locally-trusted certificates. No attendee data transits the public internet during check-in — the system operates completely offline if required.</p>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="cs-section">
+					<h2>Technical Highlights</h2>
+					<div class="cs-highlights">
+						<div class="cs-highlight-card">
+							<h4>Concurrent Redemption Safety</h4>
+							<p>The check-in API uses PostgreSQL's <code>SELECT ... FOR UPDATE SKIP LOCKED</code> combined with a serialisable transaction to atomically read and update ticket status. This guarantees that even if three operators scan the same ticket simultaneously, exactly one redemption succeeds — the others receive an immediate, unambiguous rejection response.</p>
+						</div>
+						<div class="cs-highlight-card">
+							<h4>Fernet Encryption at Rest</h4>
+							<p>Attendee PII (name, contact details) is encrypted at the application layer using Fernet before being written to the database. The encryption key is held in the server environment, not the database — a database dump does not expose readable attendee data. Decryption happens only in the FastAPI process when the data is needed for a legitimate operation.</p>
+						</div>
+						<div class="cs-highlight-card">
+							<h4>JWT-Signed QR Payload</h4>
+							<p>The QR code payload is a compact JWT signed with a server-side HMAC secret. This means ticket data is self-contained and verifiable without a database lookup during scanning — the signature check is performed first, so invalid or tampered QRs are rejected at the edge before touching the database.</p>
+						</div>
+						<div class="cs-highlight-card">
+							<h4>Offline-First Architecture</h4>
+							<p>The system is designed to operate over a local network without internet connectivity. mkcert generates certificates that are trusted by devices on the local network without requiring a CA. This allows deployment in venues with unreliable or restricted internet access — common in event spaces.</p>
+						</div>
+					</div>
+				</section>
+
+				<section class="cs-section">
+					<h2>The Stack</h2>
+					<div class="cs-stack">
+						<span class="cs-chip">FastAPI</span>
+						<span class="cs-chip">PostgreSQL</span>
+						<span class="cs-chip">SQLAlchemy (async)</span>
+						<span class="cs-chip">Fernet (cryptography)</span>
+						<span class="cs-chip">python-jose (JWT)</span>
+						<span class="cs-chip">qrcode</span>
+						<span class="cs-chip">ReportLab</span>
+						<span class="cs-chip">Server-Sent Events</span>
+						<span class="cs-chip">mkcert</span>
+						<span class="cs-chip">Docker</span>
+					</div>
+				</section>
+
+				<section class="cs-section">
+					<h2>Outcomes</h2>
+					<ul class="cs-outcomes-list">
+						<li><span class="cs-outcome-dot"></span>Zero duplicate redemptions recorded across live event deployments — concurrent scanner safety held under real-world peak check-in load.</li>
+						<li><span class="cs-outcome-dot"></span>Attendee PII remained fully encrypted at rest throughout the event lifecycle — database access without the application key exposes no readable attendee data.</li>
+						<li><span class="cs-outcome-dot"></span>The offline-first architecture enabled reliable check-in operations in venues with no stable internet connection — a common failure point for cloud-dependent ticketing systems.</li>
+						<li><span class="cs-outcome-dot"></span>The real-time admin dashboard gave event organisers live attendance visibility, allowing staffing decisions to be made dynamically as entry patterns emerged.</li>
+					</ul>
+				</section>
+
+			</article>
+		</div>
+	</div>
+
+	<!-- Case Study Navigation -->
+	<div class="cs-nav">
+		<div class="container">
+			<div class="cs-nav-inner">
+				<a href="video-localisation.html" class="cs-nav-link cs-nav-prev">
+					<span class="cs-nav-direction">← Previous</span>
+					<span class="cs-nav-title">Agentic Video Localisation</span>
+				</a>
+				<a href="../portfolio.html" class="cs-nav-all">← All Case Studies</a>
+				<div></div>
+			</div>
+		</div>
+	</div>
+
+	<!-- CTA -->
+	<section class="cta-section">
+		<div class="container">
+			<div class="cta-block animate-on-scroll">
+				<h2>Need a secure backend built for real-world load?</h2>
+				<p>I design systems where security and scalability are built into the architecture — not bolted on afterwards.</p>
+				<div class="cta-buttons">
+					<a href="https://calendly.com/jayapal-arunkumar" target="_blank" class="btn btn-primary">Schedule a Call</a>
+					<a href="../index.html#contact" class="btn btn-secondary-light">Send a Message</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		<div class="container">
+			<div class="footer-grid">
+				<div class="footer-brand">
+					<a href="../index.html" class="logo footer-logo">
+						<svg class="logo-icon" width="28" height="28" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<rect width="30" height="30" rx="7" fill="#2563eb"/>
+							<text x="15" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#ffffff" letter-spacing="-0.5">AI</text>
+						</svg>
+						Arun Jayapal
+					</a>
+					<p class="footer-tagline">Architecting Scalable,<br>Governed AI Systems.</p>
+				</div>
+				<div class="footer-nav-cols">
+					<div class="footer-nav-col">
+						<h4>Navigation</h4>
+						<ul>
+							<li><a href="../index.html">Home</a></li>
+							<li><a href="../framework.html">Framework</a></li>
+							<li><a href="../portfolio.html">Portfolio</a></li>
+						</ul>
+					</div>
+					<div class="footer-nav-col">
+						<h4>Connect</h4>
+						<ul>
+							<li><a href="https://www.linkedin.com/in/arunjeyapal/" target="_blank">LinkedIn</a></li>
+							<li><a href="mailto:contact@arunjayapal.com">Email</a></li>
+							<li><a href="../docs/resume_cv.pdf" target="_blank">Resume</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="footer-bottom"><p>&copy; 2025 Arun Jayapal. All rights reserved.</p></div>
+		</div>
+	</footer>
+
+	<script src="../js/config.js"></script>
+	<script src="../js/main.js"></script>
+</body>
+</html>
